@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
+import apiUrl from "../apiConfig";
 const RegisterForm = ()=> {
     const [input, setInput] = useState({firstName: '', age: '', location: '', gender: '', hobbiesBefore: '', hobbiesAfter: '', antibodies: true, image: '' })
     const [user, setUser]= useState(null)
@@ -18,7 +19,7 @@ const RegisterForm = ()=> {
     const handleSubmit = (e)=> {
         e.preventDefault();
         axios({
-            url: `http://localhost:3000/api/users`,
+            url: `${apiUrl}/users`,
             method: 'POST',
             data: input
         })

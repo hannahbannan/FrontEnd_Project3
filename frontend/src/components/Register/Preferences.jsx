@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import apiUrl from "../apiConfig";
 
 const Preferences = () => {
   const [ageRange, setAgeRange] = useState(null);
@@ -13,7 +14,7 @@ const Preferences = () => {
   useEffect(() => {
     const makeApiCall = async () => {
       try {
-        const res = await axios(`http://localhost:3000/api/users`);
+        const res = await axios(`${apiUrl}/users`);
         setPreferencesData(res.data.users)
         
       } catch (err) {
@@ -28,7 +29,7 @@ const Preferences = () => {
   };
 
   const filtered = preferencesData.filter((item) => {
-    return genderPreference === 'women' && item.gender === 'Female'
+    return (genderPreference === 'women' && item.gender === 'Female') || (genderPreference === 'men' && item.gender === 'Male')
   });
   console.log(preferencesData)
   console.log(filtered)

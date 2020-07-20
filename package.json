@@ -4,8 +4,9 @@
   "description": "Dating app based on the current global epidemic titled: COV-dating",
   "main": "index.js",
   "dependencies": {
-    "react-router-dom": "^5.2.0",
-    "react-router": "^5.2.0"
+    "axios": "^0.19.2",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {},
   "scripts": {

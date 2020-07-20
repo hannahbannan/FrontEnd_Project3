@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Nav.css";
 import Media from "react-media";
 import MobileNav from "../MobileNav/MobileNav";
+import {Link} from "react-router-dom";
 
 const Nav = () => {
   const [open, isOpen] = useState(false);
@@ -16,7 +17,7 @@ const Nav = () => {
         {(matches) => {
           return matches ? (
             <div className="desktop-nav">
-              <p>Dashboard</p>
+              <Link to="/dashboard">Dashboard</Link>
               <p>Favorites</p>
               <p>Messages</p>
               <p>About Covating</p>

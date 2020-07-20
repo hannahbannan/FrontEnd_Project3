@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 const RegisterForm = ()=> {
     const [input, setInput] = useState({firstName: '', age: '', location: '', gender: '', hobbiesBefore: '', hobbiesAfter: '', antibodies: true, image: '' })

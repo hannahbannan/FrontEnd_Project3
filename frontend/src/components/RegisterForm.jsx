@@ -3,7 +3,6 @@ import axios from 'axios'
 const RegisterForm = ()=> {
     const [input, setInput] = useState({firstName: '', age: '', location: '', gender: '', hobbiesBefore: '', hobbiesAfter: '', antibodies: true, image: '' })
     const [user, setUser]= useState(null)
-    const [antibody, setAntibody] = useState(false)
     const handleChange = (e) => {
         console.log(input.antibodies)
         if(input.antibodies === "Yes"){
@@ -28,6 +27,7 @@ const RegisterForm = ()=> {
         })
         .catch(console.error)
         console.log(input)
+        //Route to preferences page
     }
     return (
 <form onSubmit={handleSubmit}>
@@ -42,8 +42,6 @@ const RegisterForm = ()=> {
 
     <label>What's your gender</label>
     <input type="text" value={input.gender} onChange={handleChange} name="gender" />
-
-   
 
     <label>What were your hobbies before COVID-19?</label>
     <input type='text' value={input.hobbiesBefore} name="hobbiesBefore"  onChange={handleChange} />

@@ -25,7 +25,8 @@ const Dashboard = () => {
   console.log(randomUser);
 
   const toggleFavorite = () => {
-    console.log('favorited')
+    console.log('favorited');
+    console.log(randomUser.firstName)
 }
 
 

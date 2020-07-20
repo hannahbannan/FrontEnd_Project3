@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./Dashboard.css"
+import "./Dashboard.css";
+import apiUrl from "../apiConfig";
 
 const Dashboard = () => {
   const [users, setUsers] = useState([]);
@@ -10,7 +11,7 @@ const Dashboard = () => {
   useEffect(() => {
     const makeAPICall = async () => {
       try {
-        const response = await axios(`http://localhost:3000/api/users`);
+        const response = await axios(`${apiUrl}/users`);
         setUsers(response.data.users);
       } catch (err) {
         console.log(err);

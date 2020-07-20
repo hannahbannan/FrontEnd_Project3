@@ -1,0 +1,26 @@
+.hamburger {
+    color: black;
+    position: fixed;
+    left: 0px;
+    top: 20px;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 12px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.exit {
+    cursor: pointer;
+}
+
+.mobile-nav {
+    position: fixed;
+    left: 10px;
+    top: 20px;
+    text-align: left;
+}

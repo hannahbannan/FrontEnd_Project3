@@ -129,9 +129,6 @@ const RegisterForm = (props) => {
         <br />
         <button type="submit">Create Profile</button>
       </form>
-      <Link to="/preferences">
-        <button>Set Preferences</button>
-      </Link>
     </>
   );
 };

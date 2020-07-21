@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import apiUrl from "../apiConfig";
-
+import { useHistory } from "react-router-dom";
 const Preferences = (props) => {
-  console.log('props -', props.finalData)
+  const history = useHistory()
   const [ageRange, setAgeRange] = useState({ inputMin: "", inputMax: "" });
   const [preferencesData, setPreferencesData] = useState([]);
   const [genderPreference, setGenderPreference] = useState("");
   const [hasAntibody, setHasAntibody] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
+    history.push('/dashboard')
   };
   useEffect(() => {
     const makeApiCall = async () => {
@@ -63,12 +64,10 @@ const Preferences = (props) => {
   const filterByAge = filterByAntibody.filter((item) => {
     return item.age < ageRange.inputMax && item.age > ageRange.inputMin;
   });
-  console.log("filtered by gender", filterByGender);
-  console.log("filtered by antibody -", filterByAntibody);
-  console.log("filtered by age", filterByAge);
 
-  props.finalData.push(filterByAge)
-  console.log('fd -', props.finalData)
+  if(filterByAge.length !== 0){
+     props.finalData.push(filterByAge)
+  }
   return (
     <>
       <h1>Your Dating Preferences</h1>

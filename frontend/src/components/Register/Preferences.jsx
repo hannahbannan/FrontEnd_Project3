@@ -3,11 +3,10 @@ import axios from "axios";
 import apiUrl from "../apiConfig";
 
 const Preferences = () => {
-  const [ageRange, setAgeRange] = useState(null);
+  const [ageRange, setAgeRange] = useState({ inputMin: "", inputMax: "" });
   const [preferencesData, setPreferencesData] = useState([]);
-  const [currentValue, setCurrentValue] = useState("");
   const [genderPreference, setGenderPreference] = useState("");
-
+  const [hasAntibody, setHasAntibody] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -15,24 +14,57 @@ const Preferences = () => {
     const makeApiCall = async () => {
       try {
         const res = await axios(`${apiUrl}/users`);
-        setPreferencesData(res.data.users)
-        
+        setPreferencesData(res.data.users);
       } catch (err) {
         console.error(err);
       }
     };
     makeApiCall();
   }, []);
-  const handleChange = (e) => {
+  const handleGenderChange = (e) => {
     setGenderPreference(e.target.value);
-    console.log(e.target.value);
   };
-
-  const filtered = preferencesData.filter((item) => {
-    return (genderPreference === 'women' && item.gender === 'Female') || (genderPreference === 'men' && item.gender === 'Male')
+  const handleAntibodyChange = (e) => {
+    setHasAntibody(e.target.value);
+  };
+  const handleAgeChange = (e) => {
+    setAgeRange({
+      ...ageRange,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const filterByGender = preferencesData.filter((item) => {
+    let show = false;
+    if (genderPreference === "women" && item.gender === "Female") {
+      show = true;
+    }
+    if (genderPreference === "men" && item.gender === "Male") {
+      show = true;
+    }
+    if (genderPreference === "both" && item.gender) {
+      show = true;
+    }
+    return show;
   });
-  console.log(preferencesData)
-  console.log(filtered)
+  const filterByAntibody = filterByGender.filter((item) => {
+    let show = false;
+    if (hasAntibody === "yesAnti" && item.antibodies === true) {
+      show = true;
+    }
+    if (hasAntibody === "noAnti" && item.antibodies === false) {
+      show = true;
+    }
+    if (hasAntibody === "either" && item.antibodies) {
+      show = true;
+    }
+    return show;
+  });
+  const filterByAge = filterByAntibody.filter((item) => {
+    return item.age < ageRange.inputMax && item.age > ageRange.inputMin;
+  });
+  console.log("filtered by gender", filterByGender);
+  console.log("filtered by antibody -", filterByAntibody);
+  console.log("filtered by age", filterByAge);
 
   return (
     <>
@@ -43,30 +75,80 @@ const Preferences = () => {
         <input
           type="radio"
           id="women"
-          name="drone"
+          name="gen"
           value="women"
-          onChange={handleChange}
+          onChange={handleGenderChange}
         />
-        <label for="women">Women</label>
+        <label htmlFor="women">Women</label>
 
         <input
           type="radio"
           id="men"
-          name="drone"
+          name="gen"
           value="men"
-          onChange={handleChange}
+          onChange={handleGenderChange}
         />
-        <label for="men">Men</label>
+        <label htmlFor="men">Men</label>
 
         <input
           type="radio"
           id="both"
-          name="drone"
+          name="gen"
           value="both"
-          onChange={handleChange}
+          onChange={handleGenderChange}
         />
-        <label for="both">Both</label>
+        <label htmlFor="both">Both</label>
         <br />
+        <label>Got Antibodies?</label>
+        <input
+          type="radio"
+          id="yesAnti"
+          name="anti"
+          value="yesAnti"
+          onChange={handleAntibodyChange}
+        />
+        <label htmlFor="yesAnti">Yes</label>
+
+        <input
+          type="radio"
+          id="noAnti"
+          name="anti"
+          value="noAnti"
+          onChange={handleAntibodyChange}
+        />
+        <label htmlFor="noAnti">No</label>
+
+        <input
+          type="radio"
+          id="either"
+          name="anti"
+          value="either"
+          onChange={handleAntibodyChange}
+        />
+        <label htmlFor="either">Doesn't Matter</label>
+        <br />
+        <label>Set Age Range</label>
+        <br />
+        <label htmlFor="inputMin">Minimum Age</label>
+        <input
+          type="number"
+          min="18"
+          max="120"
+          id="inputMin"
+          value={ageRange.inputMin}
+          onChange={handleAgeChange}
+          name="inputMin"
+        />
+        <label htmlFor="inputMax">Maximum Age</label>
+        <input
+          type="number"
+          min="18"
+          max="120"
+          id="inputMax"
+          value={ageRange.inputMax}
+          onChange={handleAgeChange}
+          name="inputMax"
+        />
         <button>Submit</button>
       </form>
     </>

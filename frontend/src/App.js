@@ -3,7 +3,8 @@ import { Route } from "react-router-dom";
 import "./App.css";
 import Nav from "./components/Nav/Nav";
 import Dashboard from "./components/Dashboard/Dashboard";
-import About from "./components/About"
+import About from "./components/About";
+import Login from "./components/containers/Login";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       </header>
       <main>
         <Route path="/dashboard" component={Dashboard} />
-        <Route path='/about' component={About} />
+        <Route path="/about" component={About} />
+        <Route path="/login" component={Login} />
       </main>
     </div>
   );

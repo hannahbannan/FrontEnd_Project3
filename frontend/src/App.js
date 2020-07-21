@@ -7,9 +7,9 @@ import About from "./components/About";
 
 import Login from "./components/containers/Login";
 
-import Home from "./components/Home/Home";
-import RegisterForm from "./components/Register/RegisterForm";
-import Preferences from "./components/Register/Preferences";
+
+
+
 import Home from "./components/Home/Home";
 import RegisterForm from "./components/Register/RegisterForm";
 import Preferences from './components/Register/Preferences'

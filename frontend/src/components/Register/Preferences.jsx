@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import apiUrl from "../apiConfig";
 
-const Preferences = () => {
+const Preferences = (props) => {
+  console.log('props -', props.finalData)
   const [ageRange, setAgeRange] = useState({ inputMin: "", inputMax: "" });
   const [preferencesData, setPreferencesData] = useState([]);
   const [genderPreference, setGenderPreference] = useState("");
@@ -66,6 +67,7 @@ const Preferences = () => {
   console.log("filtered by antibody -", filterByAntibody);
   console.log("filtered by age", filterByAge);
 
+  props.finalData.push(filterByAge)
   return (
     <>
       <h1>Your Dating Preferences</h1>

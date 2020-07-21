@@ -24,7 +24,7 @@ function App() {
         <Route path="/about" component={About} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={RegisterForm} />
-        <Route path="/preferences" render={(props)=> <Preferences {...props} finalData={finalData} />}/>
+        <Route path="/preferences" render={(props)=> <Preferences {...props} finalData={finalData} setFinalData={setFinalData} />}/>
       </Switch>
     </div>
   );

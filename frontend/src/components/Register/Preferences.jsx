@@ -35,10 +35,10 @@ const Preferences = () => {
   };
   const filterByGender = preferencesData.filter((item) => {
     let show = false;
-    if (genderPreference === "women" && item.gender === "Female") {
+    if (genderPreference === "women" && (item.gender === "Female" || item.gender === 'female')) {
       show = true;
     }
-    if (genderPreference === "men" && item.gender === "Male") {
+    if (genderPreference === "men" && (item.gender === "Male" || item.gender === 'male')) {
       show = true;
     }
     if (genderPreference === "both" && item.gender) {

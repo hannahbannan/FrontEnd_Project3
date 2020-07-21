@@ -54,7 +54,7 @@ const Preferences = () => {
     if (hasAntibody === "noAnti" && item.antibodies === false) {
       show = true;
     }
-    if (hasAntibody === "either" && item.antibodies) {
+    if (hasAntibody === "either" && (item.antibodies || !item.antibodies)) {
       show = true;
     }
     return show;

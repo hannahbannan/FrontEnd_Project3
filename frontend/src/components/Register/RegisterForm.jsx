@@ -40,8 +40,10 @@ const RegisterForm = (props) => {
       .catch(console.error);
     console.log(input);
     //Route to preferences page
-    history.push("/preferences");
+
+    history.push('/preferences')
   };
+
   return (
     <>
       <form onSubmit={handleSubmit} encType="multipart/form-data">

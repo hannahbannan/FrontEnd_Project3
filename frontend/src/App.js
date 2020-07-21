@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import "./App.css";
 import Nav from "./components/Nav/Nav";
@@ -10,7 +10,9 @@ import RegisterForm from "./components/Register/RegisterForm";
 import Preferences from "./components/Register/Preferences";
 import Messages from "./components/messages/Messages";
 
+
 function App() {
+  const [finalData, setFinalData] = useState([])
   return (
     <div className="App">
       <header>
@@ -21,13 +23,12 @@ function App() {
       </header>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/dashboard" render={(props)=> <Dashboard {...props} finalData={finalData} />}/>
         <Route path="/about" component={About} />
         <Route path="/messages" component={Messages} />
-
         <Route path="/login" component={Login} />
         <Route path="/register" component={RegisterForm} />
-        <Route path="/preferences" component={Preferences} />
+        <Route path="/preferences" render={(props)=> <Preferences {...props} finalData={finalData} setFinalData={setFinalData} />}/>
       </Switch>
     </div>
   );

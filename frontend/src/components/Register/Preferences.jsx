@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import apiUrl from "../apiConfig";
-
-const Preferences = () => {
+import { useHistory } from "react-router-dom";
+const Preferences = (props) => {
+  const history = useHistory()
   const [ageRange, setAgeRange] = useState({ inputMin: "", inputMax: "" });
   const [preferencesData, setPreferencesData] = useState([]);
   const [genderPreference, setGenderPreference] = useState("");
   const [hasAntibody, setHasAntibody] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
+    history.push('/dashboard')
   };
   useEffect(() => {
     const makeApiCall = async () => {
@@ -54,7 +56,7 @@ const Preferences = () => {
     if (hasAntibody === "noAnti" && item.antibodies === false) {
       show = true;
     }
-    if (hasAntibody === "either" && item.antibodies) {
+    if (hasAntibody === "either" && (item.antibodies || !item.antibodies)) {
       show = true;
     }
     return show;
@@ -62,10 +64,10 @@ const Preferences = () => {
   const filterByAge = filterByAntibody.filter((item) => {
     return item.age < ageRange.inputMax && item.age > ageRange.inputMin;
   });
-  console.log("filtered by gender", filterByGender);
-  console.log("filtered by antibody -", filterByAntibody);
-  console.log("filtered by age", filterByAge);
 
+  if(filterByAge.length !== 0){
+     props.finalData.push(filterByAge)
+  }
   return (
     <>
       <h1>Your Dating Preferences</h1>

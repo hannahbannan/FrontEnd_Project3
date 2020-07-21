@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import axios from "axios";
 import "./Dashboard.css";
 import apiUrl from "../apiConfig";
 
 const Dashboard = () => {
   const [users, setUsers] = useState([]);
-  const [fave, isFave] = useState(false);
+  const [faved, setFaved] = useState(false);
 
-  
   useEffect(() => {
     const makeAPICall = async () => {
       try {
@@ -20,16 +19,27 @@ const Dashboard = () => {
     makeAPICall();
   }, []);
 
-  console.log(users);
+  console.log(users.length);
 
   let randomUser = users[Math.floor(Math.random() * users.length)];
-  console.log(randomUser);
 
-  const toggleFavorite = () => {
-    console.log('favorited');
-    console.log(randomUser.firstName)
-}
+  const toggleFavorite = async (user) => {
+    try {
+      user.isFavorite = true;
+      await axios.put(`${apiUrl}/users/${randomUser._id}`, user);
+    } catch (err) {
+      console.error(err)
+    }
+    console.log(randomUser.isFavorite)
+  };
 
+  const dislike = () => {
+    console.log("disliked.");
+    // console.log(users.indexOf(randomUser));
+    let indexToRemove = users.indexOf(randomUser);
+    users.splice(indexToRemove, 1);
+    console.log(users);
+  };
 
   if (!randomUser) {
     return <h2>Loading your next match....</h2>;
@@ -37,7 +47,7 @@ const Dashboard = () => {
     return (
       <div className="dashboard">
         <div className="user-info">
-          <img src={randomUser.image} className="user-image"/>
+          <img src={randomUser.image} className="user-image" />
           <h2>{randomUser.firstName}</h2>
           <h4>{randomUser.age} years old</h4>
           <h4>{randomUser.location}</h4>
@@ -45,8 +55,8 @@ const Dashboard = () => {
           <p>Hobbies after COVID: {randomUser.hobbiesAfter}</p>
         </div>
         <div className="buttons">
-          <button>Dislike</button>
-          <button onClick={toggleFavorite}>Like</button>
+          <button onClick={() => dislike()}>Dislike</button>
+          <button onClick={() =>toggleFavorite(randomUser)} >Like</button>
         </div>
       </div>
     );

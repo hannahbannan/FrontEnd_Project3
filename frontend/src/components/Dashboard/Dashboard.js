@@ -1,27 +1,12 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "./Dashboard.css";
 import apiUrl from "../apiConfig";
 
-const Dashboard = () => {
-  const [users, setUsers] = useState([]);
-  const [faved, setFaved] = useState(false);
+const Dashboard = ({finalData}) => {
 
-  useEffect(() => {
-    const makeAPICall = async () => {
-      try {
-        const response = await axios(`${apiUrl}/users`);
-        setUsers(response.data.users);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    makeAPICall();
-  }, []);
-
-  console.log(users.length);
-
-  let randomUser = users[Math.floor(Math.random() * users.length)];
+  const [users, setUsers] = useState(finalData[0]);
+  const [randomUser, setRandomUser] = useState(users[Math.floor(Math.random() * users.length)]);
 
   const toggleFavorite = async (user) => {
     try {
@@ -30,15 +15,22 @@ const Dashboard = () => {
     } catch (err) {
       console.error(err)
     }
-    console.log(randomUser.isFavorite)
+    console.log(randomUser.isFavorite);
+    let indexToRemove = users.indexOf(randomUser);
+    let splicedUsers = [...users]
+    splicedUsers.splice(indexToRemove, 1);
+    console.log(splicedUsers);
+    setUsers(splicedUsers);
+    setRandomUser(users[Math.floor(Math.random() * users.length)])
   };
 
   const dislike = () => {
-    console.log("disliked.");
-    // console.log(users.indexOf(randomUser));
     let indexToRemove = users.indexOf(randomUser);
-    users.splice(indexToRemove, 1);
-    console.log(users);
+    let splicedUsers = [...users]
+    splicedUsers.splice(indexToRemove, 1);
+    console.log(splicedUsers);
+    setUsers(splicedUsers);
+    setRandomUser(users[Math.floor(Math.random() * users.length)])
   };
 
   if (!randomUser) {
@@ -47,7 +39,7 @@ const Dashboard = () => {
     return (
       <div className="dashboard">
         <div className="user-info">
-          <img src={randomUser.image} className="user-image" />
+          <img src={randomUser.image} className="user-image" alt="profile-pic"/>
           <h2>{randomUser.firstName}</h2>
           <h4>{randomUser.age} years old</h4>
           <h4>{randomUser.location}</h4>

@@ -4,11 +4,13 @@
   "description": "Dating app based on the current global epidemic titled: COV-dating",
   "main": "index.js",
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
     "axios": "^0.19.2",
     "react-bootstrap": "^1.2.2",
     "react-media": "^1.10.0",
     "react-router": "^5.2.0",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "socket.io-client": "^2.3.0"
   },
   "devDependencies": {},
   "scripts": {

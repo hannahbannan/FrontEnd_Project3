@@ -7,7 +7,10 @@ import About from "./components/About";
 import Login from "./components/containers/Login";
 import Home from "./components/Home/Home";
 import RegisterForm from "./components/Register/RegisterForm";
-import Preferences from './components/Register/Preferences'
+import Preferences from "./components/Register/Preferences";
+import Messages from "./components/messages/Messages";
+
+
 function App() {
   const [finalData, setFinalData] = useState([])
   return (
@@ -22,6 +25,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/dashboard" render={(props)=> <Dashboard {...props} finalData={finalData} />}/>
         <Route path="/about" component={About} />
+        <Route path="/messages" component={Messages} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={RegisterForm} />
         <Route path="/preferences" render={(props)=> <Preferences {...props} finalData={finalData} setFinalData={setFinalData} />}/>

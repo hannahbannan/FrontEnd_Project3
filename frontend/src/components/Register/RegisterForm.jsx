@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import apiUrl from "../apiConfig";
 const RegisterForm = (props) => {
-  const history = useHistory()
+  const history = useHistory();
   const [input, setInput] = useState({
     firstName: "",
     age: "",
@@ -40,6 +40,7 @@ const RegisterForm = (props) => {
       .catch(console.error);
     console.log(input);
     //Route to preferences page
+
     history.push('/preferences')
   };
 
@@ -106,7 +107,6 @@ const RegisterForm = (props) => {
           onChange={handleChange}
         />
         <label htmlFor="true">Yes</label>
-
         <input
           type="radio"
           value={input.antibodies}
@@ -131,4 +131,4 @@ const RegisterForm = (props) => {
   );
 };
 //test Image https://images.unsplash.com/photo-1552766985-80f8ade49ee9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80
-export default RegisterForm
+export default RegisterForm;

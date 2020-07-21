@@ -1,19 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import "./App.css";
 import Nav from "./components/Nav/Nav";
 import Dashboard from "./components/Dashboard/Dashboard";
 import About from "./components/About";
-
 import Login from "./components/containers/Login";
-
-
-
-
 import Home from "./components/Home/Home";
 import RegisterForm from "./components/Register/RegisterForm";
 import Preferences from './components/Register/Preferences'
 function App() {
+  const [finalData, setFinalData] = useState([])
   return (
     <div className="App">
       <header>
@@ -24,17 +20,11 @@ function App() {
       </header>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/dashboard" render={(props)=> <Dashboard {...props} finalData={finalData} />}/>
         <Route path="/about" component={About} />
-
         <Route path="/login" component={Login} />
         <Route path="/register" component={RegisterForm} />
-        <Route path="/preferences" component={Preferences} />
-        <Route exact path='/' component={Home}/>
-        <Route path="/dashboard" component={Dashboard} />
-        <Route path="/about" component={About} />
-        <Route path='/register' component={RegisterForm}/>
-        <Route path='/preferences' component={Preferences}/>
+        <Route path="/preferences" render={(props)=> <Preferences {...props} finalData={finalData} />}/>
       </Switch>
     </div>
   );

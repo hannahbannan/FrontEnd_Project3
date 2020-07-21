@@ -68,6 +68,7 @@ const Preferences = (props) => {
   console.log("filtered by age", filterByAge);
 
   props.finalData.push(filterByAge)
+  console.log('fd -', props.finalData)
   return (
     <>
       <h1>Your Dating Preferences</h1>

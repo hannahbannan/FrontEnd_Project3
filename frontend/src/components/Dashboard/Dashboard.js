@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import axios from "axios";
 import "./Dashboard.css";
 import apiUrl from "../apiConfig";
@@ -23,17 +23,14 @@ const Dashboard = () => {
 
   let randomUser = users[Math.floor(Math.random() * users.length)];
 
-  const toggleFavorite = (event) => {
-    setFaved(!faved);
-    console.log(faved)
-    axios({
-      url: `${apiUrl}/users/${randomUser._id}`,
-      method: "PUT",
-      data: faved,
-    });
-    // console.log(`${apiUrl}/users/${randomUser._id}`);
-    console.log("faved!");
-    console.log(randomUser.isFavorite);
+  const toggleFavorite = async (user) => {
+    try {
+      user.isFavorite = true;
+      await axios.put(`${apiUrl}/users/${randomUser._id}`, user);
+    } catch (err) {
+      console.error(err)
+    }
+    console.log(randomUser.isFavorite)
   };
 
   const dislike = () => {
@@ -58,8 +55,8 @@ const Dashboard = () => {
           <p>Hobbies after COVID: {randomUser.hobbiesAfter}</p>
         </div>
         <div className="buttons">
-          <button onClick={dislike}>Dislike</button>
-          <button onClick={toggleFavorite} >Like</button>
+          <button onClick={() => dislike()}>Dislike</button>
+          <button onClick={() =>toggleFavorite(randomUser)} >Like</button>
         </div>
       </div>
     );

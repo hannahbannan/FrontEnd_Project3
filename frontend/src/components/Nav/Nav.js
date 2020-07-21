@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Nav.css";
 import Media from "react-media";
 import MobileNav from "../MobileNav/MobileNav";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [open, isOpen] = useState(false);
@@ -21,6 +21,7 @@ const Nav = () => {
               <p>Favorites</p>
               <p>Messages</p>
               <Link to="/about">About Covating</Link>
+              <Link to="/login">Login</Link>
             </div>
           ) : (
             <MobileNav handleClick={handleClick} open={open} />

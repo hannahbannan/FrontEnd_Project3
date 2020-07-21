@@ -10,7 +10,9 @@ import Login from "./components/containers/Login";
 import Home from "./components/Home/Home";
 import RegisterForm from "./components/Register/RegisterForm";
 import Preferences from "./components/Register/Preferences";
-
+import Home from "./components/Home/Home";
+import RegisterForm from "./components/Register/RegisterForm";
+import Preferences from './components/Register/Preferences'
 function App() {
   return (
     <div className="App">
@@ -28,6 +30,11 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/register" component={RegisterForm} />
         <Route path="/preferences" component={Preferences} />
+        <Route exact path='/' component={Home}/>
+        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/about" component={About} />
+        <Route path='/register' component={RegisterForm}/>
+        <Route path='/preferences' component={Preferences}/>
       </Switch>
     </div>
   );

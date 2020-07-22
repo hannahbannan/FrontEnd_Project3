@@ -39,16 +39,17 @@ const Dashboard = ({finalData}) => {
     return (
       <div className="dashboard">
         <div className="user-info">
-          <img src={randomUser.image} className="user-image" alt="profile-pic"/>
-          <h2>{randomUser.firstName}</h2>
-          <h4>{randomUser.age} years old</h4>
-          <h4>{randomUser.location}</h4>
-          <p>Hobbies before COVID: {randomUser.hobbiesBefore}</p>
-          <p>Hobbies after COVID: {randomUser.hobbiesAfter}</p>
+          <div className="img-crop">
+          <img src={randomUser.image} className="user-image" alt="profile-pic"/></div>
+          <p className="first-name" >{randomUser.firstName}</p>
+          <p className="user-age">{randomUser.age} years old</p>
+          <p className="user-location">{randomUser.location}</p>
+          <div className="hobbies-before"><p><span>Hobbies before COVID</span><br/> {randomUser.hobbiesBefore}</p></div>
+          <div className="hobbies-after"><p><span>Hobbies after COVID</span><br/> {randomUser.hobbiesAfter}</p></div>
         </div>
         <div className="buttons">
-          <button onClick={() => dislike()}>Dislike</button>
-          <button onClick={() =>toggleFavorite(randomUser)} >Like</button>
+          <button className="dislike-btn" onClick={() => dislike()}>Dislike</button>
+          <button className="like-btn" onClick={() =>toggleFavorite(randomUser)} >Like</button>
         </div>
       </div>
     );

@@ -1,0 +1,52 @@
+.about-container {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #362936;
+  color: white;
+  font-size: 24px;
+  padding: 1rem;
+}
+.about-title {
+  background-color: #ffffff;
+  border-radius: 2px;
+  color: #d93f51;
+  font-weight: 700;
+}
+.about-info-card {
+  background-color: #1c101c;
+    border-radius: 25px;
+    min-height: 150px;
+    align-items: center;
+    justify-content: center;
+}
+.about-info-card p {
+  text-align: center;
+  padding: 20px;
+  font-weight: 300;
+}
+.team-title-container {
+  background-color: #ffffff;
+  border-radius: 2px;
+  color: #d93f51;
+  font-weight: 700;
+}
+.prof-img-crop {
+  background: rgb(227, 83, 79);
+  background: radial-gradient(
+    circle,
+    rgba(227, 83, 79, 1) 13%,
+    rgba(194, 78, 70, 1) 41%,
+    rgba(77, 38, 45, 1) 70%
+  );
+  width: 100px;
+  height: 100px;
+  padding: 60px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.prof-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}

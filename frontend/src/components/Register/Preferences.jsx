@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import apiUrl from "../apiConfig";
 import { useHistory } from "react-router-dom";
+import './Preferences.css'
 const Preferences = (props) => {
   const history = useHistory()
   const [ageRange, setAgeRange] = useState({ inputMin: "", inputMax: "" });
@@ -71,7 +72,7 @@ const Preferences = (props) => {
   return (
     <>
       <h1>Your Dating Preferences</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="preferences-form">
         <br />
         <label>Looking For</label>
         <input
@@ -151,7 +152,7 @@ const Preferences = (props) => {
           onChange={handleAgeChange}
           name="inputMax"
         />
-        <button>Submit</button>
+        <button className="preferences-btn">Submit</button>
       </form>
     </>
   );

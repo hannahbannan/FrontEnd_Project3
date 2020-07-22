@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 import TextField from "@material-ui/core/TextField";
+import "./Messages.css";
 
 const socket = io.connect("http://localhost:4000");
 
@@ -38,7 +39,7 @@ function Message() {
   return (
     <div className="card">
       <form onSubmit={onMessageSubmit}>
-        <h1>Messanger</h1>
+        <h1>Messenger</h1>
         <div className="name-field">
           <TextField
             name="name"
@@ -60,7 +61,7 @@ function Message() {
         <button>Send Message</button>
       </form>
       <div className="render-chat">
-        <h1>Chat Log</h1>
+        <h1>Chat</h1>
         {renderChat()}
       </div>
     </div>

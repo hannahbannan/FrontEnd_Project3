@@ -3,3 +3,6 @@
     justify-content: space-around;
     align-items: center;
 }
+.desktop-nav a {
+    color: white;
+}

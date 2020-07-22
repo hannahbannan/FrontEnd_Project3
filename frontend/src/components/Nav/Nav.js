@@ -19,7 +19,7 @@ const Nav = () => {
             <div className="desktop-nav">
               <Link to="/preferences">Search for love</Link>
               <Link to="/favorites">Favorites</Link>
-              <p>Messages</p>
+              <Link to="/messages">Messages</Link>
               <Link to="/about">About Covating</Link>
               <Link to="/login">Login</Link>
             </div>

@@ -6,8 +6,8 @@
 }
 
 .hamburger div {
-    width: 30px;
-    height: 2px;
+    width: 32px;
+    height: 5px;
     background-color: white;
     margin: 6px 12px;
     cursor: pointer;
@@ -17,16 +17,30 @@
 .exit {
     cursor: pointer;
     color: white;
+    font-size: 30px;
+    padding-left: 10px;
+}
+
+.exit:hover {
+    color: #000000;
 }
 
 .mobile-nav {
     position: fixed;
-    left: 10px;
+    left: 20px;
     top: 20px;
     text-align: left;
     display: flex;
     flex-direction: column;
+    background-color: #d93f51;
+    border-radius: 25px;
 }
 .mobile-nav a {
     color: white;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.mobile-nav a:hover {
+    color: black;
 }

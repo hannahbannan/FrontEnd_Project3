@@ -1,8 +1,85 @@
-.user-image {
-    max-width: 400px;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap');
+.dashboard {
+  background-color: #362936;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 24px;
+  padding: 25px;
 }
-
+.user-info {
+    text-align: center;
+}
+.img-crop {
+  background: rgb(227, 83, 79);
+  background: radial-gradient(
+    circle,
+    rgba(227, 83, 79, 1) 13%,
+    rgba(194, 78, 70, 1) 41%,
+    rgba(77, 38, 45, 1) 70%
+  );
+  width: 200px;
+  height: 200px;
+  padding: 80px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.user-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: inline-block;
+}
+.first-name {
+    color: #ef6d4c;
+    font-size: 36px;
+}
+.user-location {
+    color: #d93f51;
+}
+.user-age {
+    color: #ffffff;
+}
+.hobbies-before {
+    background-color: #1c101c;
+    border-radius: 25px;
+    min-height: 150px;
+}
+.hobbies-after {
+    background-color: #1c101c;
+    border-radius: 25px;
+    min-height: 150px;
+}
+.hobbies-after p {
+    color: #ffffff;
+    font-size: 20px;
+}
+.hobbies-before p {
+    color: #ffffff;
+    font-size: 20px;
+}
+.hobbies-before span {
+    font-weight: 700;
+}
+.hobbies-after span {
+    font-weight: 700;
+}
 button {
-    padding: 10px;
-    margin: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+.dislike-btn {
+    background-color: #ffffff;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    color: #000000;
+    font-size: 20px;
+    min-width: 100px;
+}
+.like-btn {
+    background-color: #d93f51;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    color: #000000;
+    font-size: 20px;
+    min-width: 100px;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import "./MobileNav.css";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const MobileNav = ({ handleClick, open }) => {
   return open ? (
@@ -8,7 +8,7 @@ const MobileNav = ({ handleClick, open }) => {
       <h3 onClick={handleClick} className="exit">
         X
       </h3>
-      <Link to="/dashboard">Dashboard</Link>
+      <Link to="/preferences">Search for love</Link>
       <Link to="/favorites">Favorites</Link>
       <Link to="/Messages">Messages</Link>
       <Link to="/about">About Covating</Link>

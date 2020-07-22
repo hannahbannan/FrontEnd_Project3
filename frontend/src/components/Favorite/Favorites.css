@@ -1,0 +1,30 @@
+.ind-fave {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+    color: white;
+}
+
+.fave-user-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.fave-img {
+    max-width: 50px;
+    padding: 10px;
+}
+
+
+@media screen and (min-width: 768px) {
+    .fave-img {
+        max-width: 100px;
+    }
+    .ind-fave {
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+}

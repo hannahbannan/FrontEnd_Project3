@@ -9,8 +9,8 @@ const MobileNav = ({ handleClick, open }) => {
         X
       </h3>
       <Link to="/dashboard">Dashboard</Link>
-      <p>Favorites</p>
-      <p>Messages</p>
+      <Link to="/favorites">Favorites</Link>
+      <Link to="/Messages">Messages</Link>
       <Link to="/about">About Covating</Link>
     </div>
   ) : (

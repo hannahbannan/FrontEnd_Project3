@@ -16,12 +16,13 @@ function App() {
   return (
     <div className="App">
       <header>
+         <Nav />
         <Link to="/">
           <div className="logo-title">
           <img src="https://res.cloudinary.com/dzfyk3r12/image/upload/v1595379345/142471454-coronavirus-seamless-pattern-vector-back_1_1_cvodot.png" alt="logo"/>
           <p className="main-title">COVID - 18+</p></div>
         </Link>
-        <Nav />
+       
       </header>
       <Switch>
         <Route exact path="/" component={Home} />

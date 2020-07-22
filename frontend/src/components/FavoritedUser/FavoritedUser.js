@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import apiUrl from "../apiConfig";
-import {Link} from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 const FavoritedUser = (props) => {
   const [fave, setFave] = useState(null);
@@ -19,6 +19,16 @@ const FavoritedUser = (props) => {
     };
     makeAPICall();
   }, []);
+
+  const removeFavorite = async (user) => {
+    try {
+      user.isFavorite = false;
+      await axios.put(`${apiUrl}/users/${props.match.params.id}`, user);
+      console.log(user.isFavorite);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   if (!fave) {
     return <h2>Loading your favorite...</h2>;
@@ -44,8 +54,13 @@ const FavoritedUser = (props) => {
           </div>
         </div>
         <div className="buttons">
-            <Link to="/favorites">
-          Back to your favorites
+          <Link to="/favorites">
+            <button>Back to your Favorites</button>
+          </Link>
+          <Link to="/favorites">
+            <button onClick={() => removeFavorite(fave)}>
+              Remove from Favorites
+            </button>
           </Link>
         </div>
       </div>

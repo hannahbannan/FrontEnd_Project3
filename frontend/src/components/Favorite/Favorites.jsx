@@ -23,17 +23,21 @@ const Favorite = (props) => {
     <div className="ind-fave">
       <Link to={`/favorites/${item._id}`} key={item._id}>
         <div className="fave-user-container">
-          <img src={item.image} alt="profile-pic" className="fave-img" />
-          <p>{item.firstName}</p>
+          <div className="image">
+            <img src={item.image} alt="profile-pic" className="fave-img" />
+          </div>
+          <p className="fave-name">{item.firstName}</p>
         </div>
       </Link>
-      <Link to="/messages">Chat</Link>
+      <div className="chat-container">
+        <Link to="/messages">Chat</Link>
+      </div>
     </div>
   ));
 
   return (
     <div>
-      <h2>Your Favorites</h2>
+      <h2 className="page-title">Your Favorites</h2>
       {favesArray}
     </div>
   );

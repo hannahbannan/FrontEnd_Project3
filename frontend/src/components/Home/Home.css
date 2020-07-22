@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@100;300;400;600;700&display=swap');
+.home-page h2 {
+    color: white;
+    font-size: 20px;
+}
+.register-btn {
+    background-color: #362936;
+    border: 2px solid #ffffff;
+    border-radius: 25px;
+    color: #ffffff;
+    font-size: 20px;
+    min-width: 250px;
+    font-weight: 100;
+}

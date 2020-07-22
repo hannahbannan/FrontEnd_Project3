@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './Home.css'
 const Home = () => {
   return (
-    <div>
+    <div className="home-page">
       <h2>Antibody Can Join</h2>
 
       <Link to="/register">
-        <button>Sign Up Now</button>
+        <button className="register-btn">Create A Profile</button>
       </Link>
     </div>
   );

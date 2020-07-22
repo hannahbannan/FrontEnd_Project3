@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import apiUrl from "../apiConfig";
+import './RegisterForm.css'
 const RegisterForm = (props) => {
   const history = useHistory();
   const [input, setInput] = useState({
@@ -46,7 +47,7 @@ const RegisterForm = (props) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} encType="multipart/form-data">
+      <form onSubmit={handleSubmit} className="register-form">
         <label>What's your first name?</label>
         <input
           type="text"
@@ -125,7 +126,7 @@ const RegisterForm = (props) => {
           onChange={handleChange}
         />
         <br />
-        <button type="submit">Create Profile</button>
+        <button className="create-profile-btn" type="submit">Create Profile</button>
       </form>
     </>
   );

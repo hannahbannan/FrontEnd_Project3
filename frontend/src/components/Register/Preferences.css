@@ -1,0 +1,12 @@
+.preferences-form {
+    color: #ffffff;
+    font-size: 20px;
+}
+.preferences-btn {
+    background-color: #d93f51;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    color: #ffffff;
+    font-size: 20px;
+    min-width: 100px;
+}

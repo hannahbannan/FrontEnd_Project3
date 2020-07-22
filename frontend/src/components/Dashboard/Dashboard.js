@@ -32,6 +32,7 @@ const Dashboard = ({finalData}) => {
     setUsers(splicedUsers);
     setRandomUser(users[Math.floor(Math.random() * users.length)])
   };
+  
 
   if (!randomUser) {
     return <h2>Loading your next match....</h2>;

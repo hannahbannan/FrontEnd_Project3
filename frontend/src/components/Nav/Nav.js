@@ -18,7 +18,7 @@ const Nav = () => {
           return matches ? (
             <div className="desktop-nav">
               <Link to="/dashboard">Dashboard</Link>
-              <p>Favorites</p>
+              <Link to="/favorites">Favorites</Link>
               <p>Messages</p>
               <Link to="/about">About Covating</Link>
               <Link to="/login">Login</Link>

@@ -1,14 +1,85 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@100;300;400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@100;300;400;600;700&display=swap");
 .home-page h2 {
-    color: white;
-    font-size: 20px;
+  color: white;
+  font-size: 20px;
 }
 .register-btn {
-    background-color: #362936;
-    border: 2px solid #ffffff;
-    border-radius: 25px;
-    color: #ffffff;
-    font-size: 20px;
-    min-width: 250px;
+  background-color: #362936;
+  border: 2px solid #ffffff;
+  border-radius: 25px;
+  color: #ffffff;
+  font-size: 20px;
+  min-width: 250px;
+  font-weight: 100;
+}
+.main-vector {
+  display: none;
+}
+.antibody-tagline {
+  color: white;
+  font-size: 24px;
+}
+@media only screen and (min-width: 768px){
+  .antibody-tagline {
+    margin-top: -35px;
+    padding-bottom: 10px;
+  }
+  .home-page {
+    padding: 25px;
+  }
+.main-vector {
+  display: block;
+  background-color: #1c101c;
+  border-radius: 15px;
+}
+#vector-img {
+  width: 500px;
+  height: 500px;
+}
+}
+@media only screen and (min-width: 1024px) {
+  .home-page {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1px 1px;
+    grid-template-areas: ". ." ". ." ". .";
+    max-height: 100vh;
+    padding: 25px;
+  }
+  div span {
+    font-size: 60px;
+    font-weight: 700;
+  }
+
+  .antibody-tagline {
+    grid-column: 1;
+    font-size: larger;
+    color: white;
+    font-size: 36px;
+    padding: 10px;
+    margin-top: 0;
+  }
+
+  .form-sidebar {
+    background-color: #d93f51;
+    grid-row: 1;
+  }
+  .register-btn {
+    background-color: #ffffff;
+    border-radius: 15px;
+    color: #d93f51;
+    font-size: 24px;
+    min-width: 90%;
     font-weight: 100;
+  }
+  .main-vector {
+    display: inline;
+    background-color: #1c101c;
+    grid-column: 2;
+  }
+  #vector-img {
+    width: 700px;
+    height: 700px;
+  }
 }

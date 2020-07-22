@@ -2,4 +2,8 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding-top: 25px;
+}
+.desktop-nav a {
+    color: white;
 }

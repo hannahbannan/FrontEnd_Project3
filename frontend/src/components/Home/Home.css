@@ -30,7 +30,7 @@
 .main-vector {
   display: block;
   background-color: #1c101c;
-  border-radius: 15px;
+  /* border-radius: 15px; */
 }
 #vector-img {
   width: 500px;

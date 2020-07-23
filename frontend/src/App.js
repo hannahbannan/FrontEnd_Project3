@@ -13,6 +13,7 @@ import Favorites from "./components/Favorite/Favorites";
 import FavoritedUser from "./components/FavoritedUser/FavoritedUser";
 import Footer from './components/Footer/Footer'
 import MyProfile from './components/UserProfile/MyProfile'
+import EditProfileForm from './components/UserProfile/EditProfileForm'
 function App() {
   const [finalData, setFinalData] = useState([]);
   return (
@@ -52,6 +53,7 @@ function App() {
           )}
         />
         <Route path='/myprofile' component={MyProfile}/>
+        <Route path="/editprofile" component={EditProfileForm} />
       </Switch>
       <Footer/>
     </div>

@@ -3,7 +3,7 @@ import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import "./Login.css";
 import axios from "axios";
 import apiUrl from "../apiConfig";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -39,7 +39,7 @@ export default function Login() {
             type="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className='input-field'
+            className="input-field"
           />
         </FormGroup>
         <FormGroup controlId="password" bsSize="large">
@@ -48,21 +48,27 @@ export default function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type="password"
-            className='input-field'
+            className="input-field"
           />
         </FormGroup>
-        <Link to='/favorites'>
-        <Button block bsSize="large" disabled={!validateForm()} type="submit" className="register-btn">
+        <Button
+          block
+          bsSize="large"
+          disabled={!validateForm()}
+          type="submit"
+          className="register-btn"
+        >
           Login
         </Button>
-        </Link>
       </form>
-      <br/>
+      <br />
       <br />
       <div className="divider"></div>
-      <br/>
+      <br />
       <p>Don't have a profile yet?</p>
-      <Link to='/register'><button className="register-btn">Create a profile</button></Link>
+      <Link to="/register">
+        <button className="register-btn">Create a profile</button>
+      </Link>
     </div>
   );
 }

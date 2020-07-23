@@ -1,14 +1,30 @@
 .register-form {
-    color: #ffffff;
-    font-size: 20px;
-    padding: 24px;
-    margin: 0 auto;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 24px;
+  margin: 0 auto;
 }
 .create-profile-btn {
-    background-color: #d93f51;
-    border: 2px solid transparent;
-    border-radius: 25px;
-    color: #ffffff;
-    font-size: 18px;
-    min-width: 150px;
+  background-color: #d93f51;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  color: #ffffff;
+  font-size: 24px;
+  width: 300px;
+  height: 60px;
+  font-weight: 100;
+  cursor: pointer;
+}
+.create-profile-btn:hover {
+  background-color: #362936;
+  color: white;
+  border: 2px solid white;
+}
+
+.register-form>input {
+  height: 25px;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 5px;
+  width: 200px;
 }

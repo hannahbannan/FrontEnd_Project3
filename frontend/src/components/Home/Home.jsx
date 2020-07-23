@@ -1,14 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
+import Login from "../containers/Login"
 const Home = () => {
   return (
     <div className="home-page">
       <div className="form-sidebar">
         <div className="antibody-tagline">Antibody Can Join</div>
-        <Link to="/register">
-          <button className="register-btn">Create A Profile</button>
-        </Link>
+        <Login />
       </div>
 
       <div className="main-vector">

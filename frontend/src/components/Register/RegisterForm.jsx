@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import apiUrl from "../apiConfig";
-import './RegisterForm.css'
+import "./RegisterForm.css";
 const RegisterForm = (props) => {
   const history = useHistory();
   const [input, setInput] = useState({
@@ -15,7 +15,7 @@ const RegisterForm = (props) => {
     antibodies: true,
     image: "",
     username: "",
-    password: ""
+    password: "",
   });
   const [user, setUser] = useState(null);
   const handleChange = (e) => {
@@ -44,7 +44,7 @@ const RegisterForm = (props) => {
     console.log(input);
     //Route to preferences page
 
-    history.push('/preferences')
+    history.push("/preferences");
   };
 
   return (
@@ -76,7 +76,7 @@ const RegisterForm = (props) => {
           onChange={handleChange}
         />
         <br />
-        <label>What's your gender</label>
+        <label>What's your gender?</label>
         <input
           type="text"
           value={input.gender}
@@ -102,6 +102,7 @@ const RegisterForm = (props) => {
         <br />
         <label>Got COVID Antibodies?</label>
         <input
+          className="radio"
           type="radio"
           value={input.antibodies}
           name="antibodies"
@@ -109,8 +110,9 @@ const RegisterForm = (props) => {
           id="yes"
           onChange={handleChange}
         />
-        <label htmlFor="true">Yes</label>
+        <label htmlFor="true" className="radio">Yes</label>
         <input
+          classname="radio"
           type="radio"
           value={input.antibodies}
           name="antibodies"
@@ -118,7 +120,7 @@ const RegisterForm = (props) => {
           id="no"
           onChange={handleChange}
         />
-        <label htmlFor="false">No</label>
+        <label htmlFor="false" className="radio">No</label>
         <br />
         <label>Profile Image URL</label>
         <input
@@ -135,16 +137,19 @@ const RegisterForm = (props) => {
           name="username"
           onChange={handleChange}
         />
-        <br/>
-         <label>Create a password</label>
+        <br />
+        <label>Create a password</label>
         <input
           type="text"
           value={input.password}
           name="password"
           onChange={handleChange}
         />
-        <br/>
-        <button className="create-profile-btn" type="submit">Create Profile</button>
+        <br />
+        <br />
+        <button className="create-profile-btn" type="submit">
+          Create Profile
+        </button>
       </form>
     </>
   );

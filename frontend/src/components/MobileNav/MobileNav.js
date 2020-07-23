@@ -10,8 +10,8 @@ const MobileNav = ({ handleClick, open }) => {
       </h3>
       <Link to="/preferences" onClick={handleClick}>Search for love</Link>
       <Link to="/favorites" onClick={handleClick}>Favorites</Link>
-      <Link to="/Messages" onClick={handleClick}>Messages</Link>
       <Link to="/about" onClick={handleClick}>About Covating</Link>
+      <Link to="/login" onClick={handleClick}>Login</Link>
     </div>
   ) : (
     <div className="hamburger" onClick={handleClick}>

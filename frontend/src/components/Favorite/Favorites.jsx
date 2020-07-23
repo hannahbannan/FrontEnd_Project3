@@ -27,7 +27,7 @@ const Favorite = (props) => {
           <p>{item.firstName}</p>
         </div>
       </Link>
-      <Link to="/messages">Chat</Link>
+      <Link to={`/messages/${item._id}`}>Chat</Link>
     </div>
   ));
 

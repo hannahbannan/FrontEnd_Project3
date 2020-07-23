@@ -19,10 +19,8 @@ const Nav = () => {
             <div className="desktop-nav">
               <Link to="/dashboard">Dashboard</Link>
               <Link to="/favorites">Favorites</Link>
-              <p>Messages</p>
               <Link to="/about">About Covating</Link>
               <Link to="/login">Login</Link>
-              <Link to="/messages">Messages</Link>
             </div>
           ) : (
             <MobileNav handleClick={handleClick} open={open} />

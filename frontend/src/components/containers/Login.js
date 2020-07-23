@@ -1,29 +1,43 @@
 import React, { useState } from "react";
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import "./Login.css";
+import axios from "axios";
+import apiUrl from "../apiConfig";
 
 export default function Login() {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   function validateForm() {
-    return email.length > 0 && password.length > 0;
+    return username.length > 0 && password.length > 0;
   }
 
   function handleSubmit(event) {
     event.preventDefault();
+
+    const doAPICall = async () => {
+      console.log(username, password);
+
+      const response = await axios(
+        `${apiUrl}/users/login?username=${username}&password=${password}`
+      );
+      console.log("login response");
+      console.log(response);
+      document.cookie = "username=" + response.data.username;
+    };
+    doAPICall();
   }
 
   return (
     <div className="Login">
       <form onSubmit={handleSubmit}>
-        <FormGroup controlId="email" bsSize="large">
-          <FormLabel>Email</FormLabel>
+        <FormGroup controlId="username" bsSize="large">
+          <FormLabel>Username</FormLabel>
           <FormControl
             autoFocus
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
         </FormGroup>
         <FormGroup controlId="password" bsSize="large">

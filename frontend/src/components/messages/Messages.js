@@ -15,10 +15,10 @@ function Message(props) {
     console.log("use effect was called");
     console.log(props);
 
-    readSender = "placeholder";
-    readRecipient = props.match.params.id;
-    setPostSender("placeholder");
-    setPostRecipient(props.match.params.id);
+    readSender = document.cookie.split("=")[1];
+    readRecipient = props.match.params.username;
+    setPostSender(document.cookie.split("=")[1]);
+    setPostRecipient(props.match.params.username);
 
     const interval = setInterval(() => getNewMessages(), 1000);
 
@@ -94,14 +94,6 @@ function Message(props) {
     <div className="card">
       <form onSubmit={onMessageSubmit}>
         <h1>Messenger</h1>
-        <div className="name-field">
-          <TextField
-            name="name"
-            onChange={(e) => onTextChange(e)}
-            value={state.name}
-            label="Name"
-          />
-        </div>
         <div>
           <TextField
             name="message"

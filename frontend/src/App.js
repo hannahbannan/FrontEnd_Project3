@@ -35,7 +35,7 @@ function App() {
           render={(props) => <Dashboard {...props} finalData={finalData} />}
         />
         <Route path="/about" component={About} />
-        <Route path="/messages/:id" component={Messages} />
+        <Route path="/messages/:username" component={Messages} />
         <Route path="/favorites/:id" component={FavoritedUser} />
         <Route path="/favorites" component={Favorites} />
         <Route path="/login" component={Login} />

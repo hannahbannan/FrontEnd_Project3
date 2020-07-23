@@ -110,7 +110,7 @@ const RegisterForm = (props) => {
           id="yes"
           onChange={handleChange}
         />
-        <label htmlFor="true" className="radio">Yes</label>
+        <label htmlFor="true" id="radio-register">Yes</label>
         <input
           classname="radio"
           type="radio"
@@ -120,7 +120,7 @@ const RegisterForm = (props) => {
           id="no"
           onChange={handleChange}
         />
-        <label htmlFor="false" className="radio">No</label>
+        <label htmlFor="false" id="radio-register">No</label>
         <br />
         <label>Profile Image URL</label>
         <input

@@ -3,6 +3,7 @@
   font-size: 30px;
 }
 
+
 .ind-fave {
   display: grid;
   /* 
@@ -13,10 +14,9 @@
   align-items: center;
   color: white;
   background-color: #1c101c;
-
   margin: 10px auto 0px auto;
   padding: 10px;
-  width: 75vw;
+  width: 80vw;
   border-radius: 25px;
   grid-template-columns: repeat(3, 1fr);
 }
@@ -24,7 +24,8 @@
 .ind-fave a {
   text-decoration: none;
   color: #ef6d4c;
-  font-size: 30px;
+  font-size: 18px;
+  text-align: left;
 }
 
 .fave-user-container {
@@ -36,8 +37,8 @@
 }
 
 .fave-img {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   object-fit: cover;
   border-radius: 50%;
   display: inline-block;
@@ -51,8 +52,8 @@
     rgba(194, 78, 70, 1) 41%,
     rgba(77, 38, 45, 1) 70%
   );
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   padding: 15px;
   border-radius: 50%;
   display: flex;
@@ -71,7 +72,7 @@
   /* 
     margin-right: 20px;
      */
-     padding: 10px 30px;
+     padding: 5px 5px;
   border-radius: 25px;
   grid-column: 3;
 }
@@ -79,18 +80,62 @@
 .chat-container a {
   text-decoration: none;
   color: white;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 @media screen and (min-width: 768px) {
   .fave-img {
     max-width: 100px;
   }
+  .fave-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .image {
+    background: rgb(227, 83, 79);
+    background: radial-gradient(
+      circle,
+      rgba(227, 83, 79, 1) 13%,
+      rgba(194, 78, 70, 1) 41%,
+      rgba(77, 38, 45, 1) 70%
+    );
+    width: 70px;
+    height: 70px;
+    padding: 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
   .ind-fave {
     width: 50vw;
     margin: 10px auto 10px auto;
   }
+  .ind-fave a {
+    font-size: 30px;
+    text-align: left;
+  }
+  .chat-container {
+    background-color: #d93f51;
+    /* 
+      margin-right: 20px;
+       */
+       padding: 5px 5px;
+    border-radius: 25px;
+    grid-column: 3;
+  }
+  
+  .chat-container a {
+    font-size: 30px;
+  }
+
 }
+
 @media screen and (min-width: 1024px){
     .all-fave-container {
         display: grid;

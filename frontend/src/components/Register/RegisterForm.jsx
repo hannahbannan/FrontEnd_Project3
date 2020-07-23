@@ -140,7 +140,7 @@ const RegisterForm = (props) => {
         <input
           type="text"
           value={input.password}
-          name="username"
+          name="password"
           onChange={handleChange}
         />
         <br/>

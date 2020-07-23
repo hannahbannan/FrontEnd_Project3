@@ -12,6 +12,7 @@ import Messages from "./components/messages/Messages";
 import Favorites from "./components/Favorite/Favorites";
 import FavoritedUser from "./components/FavoritedUser/FavoritedUser";
 import Footer from './components/Footer/Footer'
+import MyProfile from './components/UserProfile/MyProfile'
 function App() {
   const [finalData, setFinalData] = useState([]);
   return (
@@ -50,6 +51,7 @@ function App() {
             />
           )}
         />
+        <Route path='/myprofile' component={MyProfile}/>
       </Switch>
       <Footer/>
     </div>

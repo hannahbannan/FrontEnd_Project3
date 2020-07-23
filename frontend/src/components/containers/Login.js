@@ -15,7 +15,7 @@ export default function Login() {
   function handleSubmit(event) {
     event.preventDefault();
 
-    const doAPICall = async () => {
+    const makeAPICall = async () => {
       console.log(username, password);
 
       const response = await axios(
@@ -25,7 +25,7 @@ export default function Login() {
       console.log(response);
       document.cookie = "username=" + response.data.username;
     };
-    doAPICall();
+    makeAPICall();
   }
 
   return (

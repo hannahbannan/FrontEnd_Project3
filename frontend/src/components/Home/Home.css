@@ -54,10 +54,6 @@
     max-height: 100vh;
     padding: 25px;
   }
-  div span {
-    font-size: 60px;
-    font-weight: 700;
-  }
 
   .antibody-tagline {
     grid-column: 1;

@@ -3,6 +3,8 @@ import apiUrl from "../apiConfig";
 import axios from "axios";
 import { Link, useHistory, Route } from "react-router-dom";
 import EditProfileForm from "./EditProfileForm";
+import Login from '../containers/Login'
+import './MyProfile.css'
 const MyProfile = () => {
   const [info, setInfo] = useState(null);
   const currentUser = document.cookie.split("=")[1];
@@ -98,13 +100,14 @@ const MyProfile = () => {
     return (
       <div className="login-warning">
         You have to log in to view your profile!
-        <Link to="/login">Login</Link>
+        <Login></Login>
+        {/* <Link to="/login">Login</Link> */}
       </div>
     );
   }
   return (
     <div className="my-profile-container">
-      <div>My Profile</div>
+      <div className="profile-title">My Profile</div>
       {profileInfo}
     </div>
   );

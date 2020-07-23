@@ -1,12 +1,9 @@
 .preferences-form {
     color: #ffffff;
-    font-size: 20px;
+    font-size: 24px;
 }
-.preferences-btn {
-    background-color: #d93f51;
-    border: 2px solid transparent;
-    border-radius: 25px;
-    color: #ffffff;
-    font-size: 20px;
-    min-width: 100px;
+
+.preferences-form>input {
+    margin: 30px;
+    height: 24px;
 }

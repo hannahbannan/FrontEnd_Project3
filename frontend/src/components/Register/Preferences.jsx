@@ -2,16 +2,16 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import apiUrl from "../apiConfig";
 import { useHistory } from "react-router-dom";
-import './Preferences.css'
+import "./Preferences.css";
 const Preferences = (props) => {
-  const history = useHistory()
+  const history = useHistory();
   const [ageRange, setAgeRange] = useState({ inputMin: "", inputMax: "" });
   const [preferencesData, setPreferencesData] = useState([]);
   const [genderPreference, setGenderPreference] = useState("");
   const [hasAntibody, setHasAntibody] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    history.push('/dashboard')
+    history.push("/dashboard");
   };
   useEffect(() => {
     const makeApiCall = async () => {
@@ -38,10 +38,16 @@ const Preferences = (props) => {
   };
   const filterByGender = preferencesData.filter((item) => {
     let show = false;
-    if (genderPreference === "women" && (item.gender === "Female" || item.gender === 'female')) {
+    if (
+      genderPreference === "women" &&
+      (item.gender === "Female" || item.gender === "female")
+    ) {
       show = true;
     }
-    if (genderPreference === "men" && (item.gender === "Male" || item.gender === 'male')) {
+    if (
+      genderPreference === "men" &&
+      (item.gender === "Male" || item.gender === "male")
+    ) {
       show = true;
     }
     if (genderPreference === "both" && item.gender) {
@@ -66,8 +72,8 @@ const Preferences = (props) => {
     return item.age < ageRange.inputMax && item.age > ageRange.inputMin;
   });
 
-  if(filterByAge.length !== 0){
-     props.finalData.push(filterByAge)
+  if (filterByAge.length !== 0) {
+    props.finalData.push(filterByAge);
   }
   return (
     <>
@@ -152,7 +158,9 @@ const Preferences = (props) => {
           onChange={handleAgeChange}
           name="inputMax"
         />
-        <button className="preferences-btn">Submit</button>
+        <br />
+        <br />
+        <button className="create-profile-btn">Submit</button>
       </form>
     </>
   );

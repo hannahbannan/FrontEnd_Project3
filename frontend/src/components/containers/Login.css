@@ -10,3 +10,23 @@
     max-width: 320px;
   }
 }
+
+.input-field {
+  height: 25px;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 5px;
+  width: 160px;
+}
+
+.create-link {
+  text-decoration: underline;
+  color: #d93f51;
+}
+
+.divider {
+  height: 4px;
+  background-color: #362936;
+  width: 80%;
+  margin: 0 auto;
+}

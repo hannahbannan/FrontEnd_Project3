@@ -12,6 +12,7 @@ const MobileNav = ({ handleClick, open }) => {
       <Link to="/favorites" onClick={handleClick}>Favorites</Link>
       <Link to="/about" onClick={handleClick}>About Covating</Link>
       <Link to="/login" onClick={handleClick}>Login</Link>
+      <Link to='/myprofile' onClick={handleClick}>My Profile</Link>
     </div>
   ) : (
     <div className="hamburger" onClick={handleClick}>

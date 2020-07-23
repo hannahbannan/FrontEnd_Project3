@@ -80,84 +80,104 @@ const Preferences = (props) => {
       <h1 className="page-title">Your Dating Preferences</h1>
       <form onSubmit={handleSubmit} className="preferences-form">
         <br />
-        <label>Looking For</label>
-        <input
-          type="radio"
-          id="women"
-          name="gen"
-          value="women"
-          onChange={handleGenderChange}
-        />
-        <label htmlFor="women">Women</label>
+        <section>
+          <label className="label">Looking For:</label>
+          <br />
+          <input
+            className="radio"
+            type="radio"
+            id="women"
+            name="gen"
+            value="women"
+            onChange={handleGenderChange}
+          />
+          <label htmlFor="women">Women</label>
+          <br />
 
-        <input
-          type="radio"
-          id="men"
-          name="gen"
-          value="men"
-          onChange={handleGenderChange}
-        />
-        <label htmlFor="men">Men</label>
-
-        <input
-          type="radio"
-          id="both"
-          name="gen"
-          value="both"
-          onChange={handleGenderChange}
-        />
-        <label htmlFor="both">Both</label>
+          <input
+            className="radio"
+            type="radio"
+            id="men"
+            name="gen"
+            value="men"
+            onChange={handleGenderChange}
+          />
+          <label htmlFor="men">Men</label>
+          <br />
+          <input
+            className="radio"
+            type="radio"
+            id="both"
+            name="gen"
+            value="both"
+            onChange={handleGenderChange}
+          />
+          <label htmlFor="both">Both</label>
+        </section>
         <br />
-        <label>Got Antibodies?</label>
-        <input
-          type="radio"
-          id="yesAnti"
-          name="anti"
-          value="yesAnti"
-          onChange={handleAntibodyChange}
-        />
-        <label htmlFor="yesAnti">Yes</label>
-
-        <input
-          type="radio"
-          id="noAnti"
-          name="anti"
-          value="noAnti"
-          onChange={handleAntibodyChange}
-        />
-        <label htmlFor="noAnti">No</label>
-
-        <input
-          type="radio"
-          id="either"
-          name="anti"
-          value="either"
-          onChange={handleAntibodyChange}
-        />
-        <label htmlFor="either">Doesn't Matter</label>
         <br />
-        <label>Set Age Range</label>
+        <section>
+          <label className="label">Got Antibodies?</label>
+          <br />
+          <input
+            className="radio"
+            type="radio"
+            id="yesAnti"
+            name="anti"
+            value="yesAnti"
+            onChange={handleAntibodyChange}
+          />
+          <label htmlFor="yesAnti">Yes</label>
+          <br />
+          <input
+            className="radio"
+            type="radio"
+            id="noAnti"
+            name="anti"
+            value="noAnti"
+            onChange={handleAntibodyChange}
+          />
+          <label htmlFor="noAnti">No</label>
+          <br />
+          <input
+            className="radio"
+            type="radio"
+            id="either"
+            name="anti"
+            value="either"
+            onChange={handleAntibodyChange}
+          />
+          <label htmlFor="either">Doesn't Matter</label>
+        </section>
         <br />
-        <label htmlFor="inputMin">Minimum Age</label>
-        <input
-          type="number"
-          min="18"
-          max="120"
-          id="inputMin"
-          value={ageRange.inputMin}
-          onChange={handleAgeChange}
-          name="inputMin"
-        />
-        <label htmlFor="inputMax">Maximum Age</label>
-        <input
-          type="number"
-          min="18"
-          max="120"
-          id="inputMax"
-          value={ageRange.inputMax}
-          onChange={handleAgeChange}
-          name="inputMax"
-        />
+        <br/>
+        <section>
+          <label className="label">Set Age Range</label>
+          <br />
+          <label htmlFor="inputMin">Minimum Age</label>
+          <input
+          className="age"
+            type="number"
+            min="18"
+            max="120"
+            id="inputMin"
+            value={ageRange.inputMin}
+            onChange={handleAgeChange}
+            name="inputMin"
+          />
+          <br/>
+          <label htmlFor="inputMax">Maximum Age</label>
+          <input
+          className="age"
+            type="number"
+            min="18"
+            max="120"
+            id="inputMax"
+            value={ageRange.inputMax}
+            onChange={handleAgeChange}
+            name="inputMax"
+          />
+        </section>
         <br />
         <br />
         <button className="create-profile-btn">Submit</button>

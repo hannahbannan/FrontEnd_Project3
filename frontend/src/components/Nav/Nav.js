@@ -21,6 +21,7 @@ const Nav = () => {
               <Link to="/favorites">Favorites</Link>
               <Link to="/about">About Covating</Link>
               <Link to="/login">Login</Link>
+              <Link to='/myprofile'>My Profile</Link>
             </div>
           ) : (
             <MobileNav handleClick={handleClick} open={open} />

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import TextField from "@material-ui/core/TextField";
 import axios from "axios";
 import apiUrl from "../apiConfig";
+import "./Messages.css";
 
 function Message(props) {
   const [state, setState] = useState({ message: "", name: "" });
@@ -52,7 +53,6 @@ function Message(props) {
   const onMessageSubmit = (e) => {
     e.preventDefault();
     const { name, message } = state;
-    // socket.emit("message", { name, message });
 
     console.log("postSender: " + postSender);
     console.log("postRecipient: " + postRecipient);

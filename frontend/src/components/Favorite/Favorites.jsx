@@ -35,8 +35,9 @@ const Favorite = (props) => {
         </Link>
       </div>
       <div className="chat-container">
-        <Link to="/messages">Chat</Link>
+        <Link to={`/messages/${item._id}`}>Chat</Link>
       </div>
+
     </div>
     
   ));

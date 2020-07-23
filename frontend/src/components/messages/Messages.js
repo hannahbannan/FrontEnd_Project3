@@ -1,18 +1,49 @@
 import React, { useState, useEffect } from "react";
-import io from "socket.io-client";
 import TextField from "@material-ui/core/TextField";
+import axios from "axios";
+import apiUrl from "../apiConfig";
 
-const socket = io.connect("http://localhost:4000");
-
-function Message() {
+function Message(props) {
   const [state, setState] = useState({ message: "", name: "" });
   const [chat, setChat] = useState([]);
+  const [postSender, setPostSender] = useState("");
+  const [postRecipient, setPostRecipient] = useState("");
+  let readSender = "";
+  let readRecipient = "";
 
   useEffect(() => {
-    socket.on("message", ({ name, message }) => {
-      setChat([...chat, { name, message }]);
-    });
-  });
+    console.log("use effect was called");
+    console.log(props);
+
+    readSender = "placeholder";
+    readRecipient = props.match.params.id;
+    setPostSender("placeholder");
+    setPostRecipient(props.match.params.id);
+
+    const interval = setInterval(() => getNewMessages(), 1000);
+
+    return function cleanup() {
+      console.log("use effect cleanup was called");
+      clearInterval(interval);
+    };
+  }, []);
+
+  const getNewMessages = async (e) => {
+    try {
+      console.log("before api call");
+      console.log("readSender: " + readSender);
+      console.log("readRecipient: " + readRecipient);
+      const response = await axios(
+        `${apiUrl}/messages?sender=${readSender}&recipient=${readRecipient}`
+      );
+      console.log("after api call");
+      console.log(response);
+
+      setChat(response.data.messages.reverse());
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   const onTextChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
@@ -21,15 +52,39 @@ function Message() {
   const onMessageSubmit = (e) => {
     e.preventDefault();
     const { name, message } = state;
-    socket.emit("message", { name, message });
+    // socket.emit("message", { name, message });
+
+    console.log("postSender: " + postSender);
+    console.log("postRecipient: " + postRecipient);
+
+    const postMessageAPI = async (message) => {
+      console.log("postSenderPOST: " + postSender);
+      console.log("postRecipientPOST: " + postRecipient);
+
+      try {
+        console.log("before api call");
+        const jsonBody = {
+          message: message,
+          sender: postSender,
+          recipient: postRecipient,
+        };
+        const response = await axios.post(`${apiUrl}/messages`, jsonBody);
+        console.log("after api call");
+        console.log(response);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    postMessageAPI(message);
+
     setState({ message: "", name });
   };
 
   const renderChat = () => {
-    return chat.map(({ name, message }, index) => (
+    return chat.map(({ sender, message }, index) => (
       <div key={index}>
         <h3>
-          {name}: <span>{message}</span>
+          {sender}: <span>{message}</span>
         </h3>
       </div>
     ));

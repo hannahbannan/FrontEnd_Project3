@@ -14,7 +14,7 @@ const Home = () => {
       <div className="main-vector">
         <img
           id="vector-img"
-          src="https://res.cloudinary.com/dzfyk3r12/image/upload/v1595450446/2857717-eps_2_s7l1hd.png"
+          src="https://res.cloudinary.com/dzfyk3r12/image/upload/v1595467852/2857717-eps_2_1_1_hkgty6.png"
         ></img>
       </div>
     </div>

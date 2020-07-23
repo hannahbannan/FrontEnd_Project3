@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import apiUrl from "../apiConfig";
-import { Link, Redirect } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const FavoritedUser = (props) => {
+  let history = useHistory();
   const [fave, setFave] = useState(null);
 
   useEffect(() => {
@@ -25,6 +26,7 @@ const FavoritedUser = (props) => {
       user.isFavorite = false;
       await axios.put(`${apiUrl}/users/${props.match.params.id}`, user);
       console.log(user.isFavorite);
+      history.push("/favorites")
     } catch (err) {
       console.error(err);
     }
@@ -36,7 +38,9 @@ const FavoritedUser = (props) => {
     return (
       <div className="favorited-user">
         <div>
-          <img src={fave.image} alt="profile-pic" />
+            <div className="img-crop">
+          <img src={fave.image} alt="profile-pic" className="user-image"/>
+          </div>
           <p className="first-name">{fave.firstName}</p>
           <p className="user-age">{fave.age} years old</p>
           <p className="user-location">{fave.location}</p>
@@ -55,13 +59,11 @@ const FavoritedUser = (props) => {
         </div>
         <div className="buttons">
           <Link to="/favorites">
-            <button>Back to your Favorites</button>
+            <button className="dislike-btn">Back to your Favorites</button>
           </Link>
-          <Link to="/favorites">
-            <button onClick={() => removeFavorite(fave)}>
+            <button onClick={() => removeFavorite(fave)} className="like-btn">
               Remove from Favorites
             </button>
-          </Link>
         </div>
       </div>
     );

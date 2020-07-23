@@ -7,9 +7,9 @@
   padding: 1rem;
 }
 .about-title {
-  background-color: #ffffff;
+  background-color: #d93f51;
   border-radius: 2px;
-  color: #d93f51;
+  color: #ffffff;
   font-weight: 700;
 }
 .about-info-card {
@@ -25,9 +25,9 @@
   font-weight: 300;
 }
 .team-title-container {
-  background-color: #ffffff;
+  background-color: #d93f51;
   border-radius: 2px;
-  color: #d93f51;
+  color: #ffffff;
   font-weight: 700;
 }
 .prof-img-crop {
@@ -49,4 +49,60 @@
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
+}
+.team-name {
+  font-size: 30px;
+}
+
+@media screen and (min-width: 768px){
+ .jordan {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+ }
+ .jordan-desc {
+  grid-column: 2;
+  background-color: #1c101c;
+   border-radius: 15px;
+   align-self: center;
+   padding: 10px;
+ }
+ .naama {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+ }
+ .naama-desc {
+   grid-column: 2;
+   background-color: #1c101c;
+   border-radius: 15px;
+   align-self: center;
+   padding: 10px;
+ }
+ .team-name {
+   grid-column: span 3;
+ }
+ .prof-img-crop {
+   justify-self: center;
+ }
+ .anthony {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.anthony-desc {
+  grid-column: 2;
+  background-color: #1c101c;
+   border-radius: 15px;
+   align-self: center;
+   padding: 10px;
+}
+.hannah {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.hannah-desc {
+  grid-column: 2;
+  background-color: #1c101c;
+   border-radius: 15px;
+   align-self: center;
+   padding: 10px;
+}
 }

@@ -12,6 +12,7 @@ body {
 .main-title {
   color: #ffffff;
   font-size: 36px;
+  font-weight: 700;
 }
 header a{
   text-decoration: none;

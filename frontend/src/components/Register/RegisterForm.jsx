@@ -14,6 +14,8 @@ const RegisterForm = (props) => {
     hobbiesAfter: "",
     antibodies: true,
     image: "",
+    username: "",
+    password: ""
   });
   const [user, setUser] = useState(null);
   const handleChange = (e) => {
@@ -126,6 +128,22 @@ const RegisterForm = (props) => {
           onChange={handleChange}
         />
         <br />
+        <label>Create a username</label>
+        <input
+          type="text"
+          value={input.username}
+          name="username"
+          onChange={handleChange}
+        />
+        <br/>
+         <label>Create a password</label>
+        <input
+          type="text"
+          value={input.password}
+          name="username"
+          onChange={handleChange}
+        />
+        <br/>
         <button className="create-profile-btn" type="submit">Create Profile</button>
       </form>
     </>

@@ -71,7 +71,7 @@ const Preferences = (props) => {
   }
   return (
     <>
-      <h1>Your Dating Preferences</h1>
+      <h1 className="page-title">Your Dating Preferences</h1>
       <form onSubmit={handleSubmit} className="preferences-form">
         <br />
         <label>Looking For</label>

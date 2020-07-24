@@ -52,8 +52,8 @@ function App() {
             />
           )}
         />
+        <Route path="/myprofile/:id/edit" component={EditProfileForm} />
         <Route path='/myprofile' component={MyProfile}/>
-        <Route path="/editprofile" component={EditProfileForm} />
       </Switch>
       <Footer/>
     </div>

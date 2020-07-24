@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap");
 .card {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -13,21 +14,26 @@ form {
 .name-field {
   margin-bottom: 40px;
 }
-button {
-  margin-top: 20px;
-  padding: 10px;
-  background: transparent;
-  border-radius: 5px;
-}
+
 .render-chat {
   max-width: 350px;
   border-radius: 5px;
   padding: 20px;
   box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75);
 }
-h3 {
-  color: #2f72da;
-}
 span {
   color: black;
+}
+.messageButton {
+  margin-top: 20px;
+  padding: 10px;
+  background: #c63e40;
+  border-radius: 5px;
+  border-color: #c63e40;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+  font-weight: bolder;
+}
+.renderSpan {
+  font-size: 10px;
 }

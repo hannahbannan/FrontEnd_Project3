@@ -8,11 +8,21 @@ const MobileNav = ({ handleClick, open }) => {
       <h3 onClick={handleClick} className="exit">
         X
       </h3>
-      <Link to="/preferences" onClick={handleClick}>Search for love</Link>
-      <Link to="/favorites" onClick={handleClick}>Favorites</Link>
-      <Link to="/about" onClick={handleClick}>About Covating</Link>
-      <Link to="/login" onClick={handleClick}>Login</Link>
-      <Link to='/myprofile' onClick={handleClick}>My Profile</Link>
+      <Link to="/preferences" onClick={handleClick}>
+        Search for love
+      </Link>
+      <Link to="/favorites" onClick={handleClick}>
+        Favorites
+      </Link>
+      <Link to="/about" onClick={handleClick}>
+        About Covid-18+
+      </Link>
+      <Link to="/login" onClick={handleClick}>
+        Login
+      </Link>
+      <Link to="/myprofile" onClick={handleClick}>
+        My Profile
+      </Link>
     </div>
   ) : (
     <div className="hamburger" onClick={handleClick}>

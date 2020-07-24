@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import apiUrl from "../apiConfig";
 import axios from "axios";
-import { Link, useHistory, Route } from "react-router-dom";
-import EditProfileForm from "./EditProfileForm";
+import { Link, useHistory } from "react-router-dom";
 import Login from '../containers/Login'
 import './MyProfile.css'
 const MyProfile = (props) => {
@@ -10,8 +9,6 @@ const MyProfile = (props) => {
   const currentUser = document.cookie.split("=")[1];
   const [id, setId] = useState("");
   const [isDeleted, setIsDeleted] = useState(false);
-  const [isUpdated, setIsUpdated] = useState(false);
-  const [temp, setTemp] = useState({});
   const history = useHistory();
   let profileInfo;
   useEffect(() => {
@@ -19,7 +16,6 @@ const MyProfile = (props) => {
       try {
         const res = await axios(`${apiUrl}/users/username/${currentUser}`);
         setInfo(res.data.user);
-        // console.log("in",)
         setId(res.data.user[0]._id);
       } catch (err) {
         console.error(err);
@@ -30,7 +26,6 @@ const MyProfile = (props) => {
 
   if (info) {
     profileInfo = info.map((item) => {
-      console.log(item);
       return (
         <>
           <div className="dashboard">
@@ -59,10 +54,10 @@ const MyProfile = (props) => {
               </div>
             </div>
             <div className="buttons">
-              {/* <button className="edit-btn" onClick={() => editProfile()}>
+              
+              <Link to={`/myprofile/${props.match.params.id}/edit`}><button className="edit-btn">
                 Edit Profile
-              </button> */}
-              <Link to={`/myprofile/${props.match.params.id}/edit`}>Edit Profile</Link>
+              </button></Link>
               <button className="destroy-btn" onClick={() => deleteProfile()}>
                 Delete Profile
               </button>
@@ -71,17 +66,7 @@ const MyProfile = (props) => {
         </>
       );
     });
-  }
-
-//   const editProfile = async () => {
-//     history.push('/editprofile')
-//     // const response = await axios({
-//     //   url: `${apiUrl}/users/${id}`,
-//     //   method: "PUT",
-//     //   data: temp,
-//     // });
-//     setIsUpdated(true);
-//   };
+  } 
 
   const deleteProfile = async () => {
     const response = await axios({
@@ -102,7 +87,6 @@ const MyProfile = (props) => {
       <div className="login-warning">
         You have to log in to view your profile!
         <Login></Login>
-        {/* <Link to="/login">Login</Link> */}
       </div>
     );
   }

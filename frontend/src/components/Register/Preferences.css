@@ -1,6 +1,7 @@
 .preferences-form {
   color: #ffffff;
   font-size: 24px;
+  margin: 0 auto;
 }
 
 .preferences-form > input {

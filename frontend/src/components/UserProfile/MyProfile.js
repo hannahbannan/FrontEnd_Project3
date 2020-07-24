@@ -5,7 +5,7 @@ import { Link, useHistory, Route } from "react-router-dom";
 import EditProfileForm from "./EditProfileForm";
 import Login from '../containers/Login'
 import './MyProfile.css'
-const MyProfile = () => {
+const MyProfile = (props) => {
   const [info, setInfo] = useState(null);
   const currentUser = document.cookie.split("=")[1];
   const [id, setId] = useState("");
@@ -62,7 +62,7 @@ const MyProfile = () => {
               {/* <button className="edit-btn" onClick={() => editProfile()}>
                 Edit Profile
               </button> */}
-              <Link to='/editprofile'>Edit Profile</Link>
+              <Link to={`/myprofile/${props.match.params.id}/edit`}>Edit Profile</Link>
               <button className="destroy-btn" onClick={() => deleteProfile()}>
                 Delete Profile
               </button>

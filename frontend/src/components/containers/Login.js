@@ -8,11 +8,13 @@ import { Link, useHistory } from "react-router-dom";
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const history = useHistory()
+
   function validateForm() {
     return username.length > 0 && password.length > 0;
   }
 
+  const history=useHistory();
+  
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -27,7 +29,7 @@ export default function Login() {
       document.cookie = "username=" + response.data.username;
     };
     makeAPICall();
-    history.push('/favorites')
+    history.push("/favorites");
   }
 
   return (

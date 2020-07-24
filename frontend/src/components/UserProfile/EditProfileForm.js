@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import apiUrl from "../apiConfig";
 import { Redirect } from "react-router-dom";
-import currentUser from "../UserProfile/MyProfile";
 
 const EditProfileForm = (props) => {
   const [userInfo, setUserInfo] = useState({
@@ -20,14 +19,14 @@ const EditProfileForm = (props) => {
     hobbiesAfter: "",
   });
   const [isUpdated, setIsUpdated] = useState(false);
-
+  const [id, setId] = useState("");
+  const currentUser = document.cookie.split("=")[1];
   useEffect(() => {
     const makeAPICall = async () => {
       try {
         const response = await axios(`${apiUrl}/users/username/${currentUser}`);
-        console.log(response.data);
         setUserInfo({ userInfo: response.data });
-        console.log(userInfo);
+        setId(response.data.user[0]._id);
       } catch (err) {
         console.error(err);
       }
@@ -36,13 +35,13 @@ const EditProfileForm = (props) => {
   }, []);
 
   const handleChange = (e) => {
-    console.log(e.target.value);
+    setUserInfo({...userInfo, [e.target.name]: e.target.value})
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios({
-      url: `${apiUrl}/users/username/${currentUser}`,
+      url: `${apiUrl}/users/${id}`,
       method: "PUT",
       data: userInfo,
     })

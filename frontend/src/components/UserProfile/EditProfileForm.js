@@ -6,7 +6,7 @@ const EditProfileForm = ()=> {
         console.log(e.target.value)
     }
     const handleSubmit = (e)=> {
-
+      e.preventDefault()
     }
     
     return (

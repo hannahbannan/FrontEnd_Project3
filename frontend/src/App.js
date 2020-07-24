@@ -11,11 +11,17 @@ import Preferences from "./components/Register/Preferences";
 import Messages from "./components/messages/Messages";
 import Favorites from "./components/Favorite/Favorites";
 import FavoritedUser from "./components/FavoritedUser/FavoritedUser";
-import Footer from './components/Footer/Footer'
+import Footer from './components/Footer/Footer';
+import CovidTips from './components/CovidTips'
+// import Animation from './components/Animation'
+
 function App() {
   const [finalData, setFinalData] = useState([]);
   return (
+    
+    
     <div className="App">
+    {/* <Route path="/Animation" component={Animation} /> */}
       <header>
         <Nav />
         <Link to="/">
@@ -35,7 +41,9 @@ function App() {
           render={(props) => <Dashboard {...props} finalData={finalData} />}
         />
         <Route path="/about" component={About} />
+        
         <Route path="/messages" component={Messages} />
+        <Route path="/CovidTips" component={CovidTips} />
         <Route path="/favorites/:id" component={FavoritedUser} />
         <Route path="/favorites" component={Favorites} />
         <Route path="/login" component={Login} />

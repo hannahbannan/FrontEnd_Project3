@@ -1,4 +1,4 @@
-@media all and (min-width: 480px) {
+/* @media all and (min-width: 480px) { */
   .Login {
     padding: 60px 0;
     color: white;
@@ -8,8 +8,8 @@
   .Login form {
     margin: 0 auto;
     max-width: 320px;
-  }
-}
+ }
+/* }  */
 
 .input-field {
   height: 25px;
@@ -30,3 +30,6 @@
   width: 80%;
   margin: 0 auto;
 }
+/* .register-btn {
+  color: white;
+} */

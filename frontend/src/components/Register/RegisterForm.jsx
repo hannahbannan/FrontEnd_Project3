@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import apiUrl from "../apiConfig";
 import "./RegisterForm.css";
-const RegisterForm = (props) => {
+const RegisterForm = () => {
   const history = useHistory();
   const [input, setInput] = useState({
     firstName: "",
@@ -42,8 +42,6 @@ const RegisterForm = (props) => {
         setUser({ newUserProfile: res.data });
       })
       .catch(console.error);
-    console.log(input);
-    //Route to preferences page
 
     history.push("/preferences");
   };
@@ -107,7 +105,7 @@ const RegisterForm = (props) => {
           type="radio"
           value={input.antibodies}
           name="antibodies"
-          value="yesAnti"
+          
           id="yes"
           onChange={handleChange}
         />
@@ -119,7 +117,7 @@ const RegisterForm = (props) => {
           type="radio"
           value={input.antibodies}
           name="antibodies"
-          value="noAnti"
+          
           id="no"
           onChange={handleChange}
         />

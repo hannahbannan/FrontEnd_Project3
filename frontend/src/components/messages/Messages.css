@@ -1,15 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap");
-.card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.message-card {
   margin: 30px;
   min-height: 30rem;
-}
-form {
-  max-width: 350px;
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75);
+  color: white;
 }
 .name-field {
   margin-bottom: 40px;
@@ -17,23 +10,43 @@ form {
 
 .render-chat {
   max-width: 350px;
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75);
+  max-width: 80vw;
+  max-height: 50vh;
+  overflow-y: scroll;
+  /* box-shadow: 0px 3px 24px -8px rgba(255, 255, 255, 0.904); */
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 0 auto;
 }
-span {
-  color: black;
-}
+
 .messageButton {
-  margin-top: 20px;
   padding: 10px;
-  background: #c63e40;
+  background: #d93f51;
   border-radius: 5px;
   border-color: #c63e40;
   font-family: "Nunito Sans", sans-serif;
   font-size: 18px;
   font-weight: bolder;
+  min-height: 7vh;
 }
 .renderSpan {
   font-size: 10px;
 }
+.message-form-ctn {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  color: white;
+  margin: 0 auto;
+  background-color: white;
+  max-width: 80vw;
+  justify-content: space-between;
+}
+.chat-log-title {
+  background-color: #d93f51;
+}
+

@@ -65,10 +65,10 @@
     color: #ffffff;
     font-weight: 700;
 }
-button {
+/* button {
   padding: 10px;
   margin: 10px;
-}
+} */
 .dislike-btn {
     background-color: #ffffff;
     border: 2px solid transparent;
@@ -76,6 +76,8 @@ button {
     color: #000000;
     font-size: 20px;
     min-width: 100px;
+    padding: 10px;
+  margin: 10px;
 }
 .like-btn {
     background-color: #d93f51;
@@ -84,4 +86,6 @@ button {
     color: #000000;
     font-size: 20px;
     min-width: 100px;
+    padding: 10px;
+  margin: 10px;
 }

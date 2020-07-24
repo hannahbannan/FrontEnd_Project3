@@ -2,8 +2,17 @@ import React, { useState, useEffect } from "react";
 import TextField from "@material-ui/core/TextField";
 import axios from "axios";
 import apiUrl from "../apiConfig";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
 import "./Messages.css";
-
+const styles = {
+  root: {
+    background: "white",
+  },
+  input: {
+    color: "black",
+  },
+};
 function Message(props) {
   const [state, setState] = useState({ message: "", name: "" });
   const [chat, setChat] = useState([]);
@@ -39,7 +48,6 @@ function Message(props) {
       );
       console.log("after api call");
       console.log(response);
-
       setChat(response.data.messages.reverse());
     } catch (err) {
       console.error(err);
@@ -89,29 +97,33 @@ function Message(props) {
       </div>
     ));
   };
-
+  const { classes } = props;
   return (
-    <div className="card">
-      <form onSubmit={onMessageSubmit}>
-        <h1>Messenger</h1>
-        <div>
+    <div className="message-card">
+      <h1 className="chat-log-title">Direct Messenger</h1>
+      <div className="render-chat">{renderChat()}</div>
+      <form onSubmit={onMessageSubmit} className="message-form-ctn">
+        <div className="textfield-ctn">
           <TextField
             name="message"
             onChange={(e) => onTextChange(e)}
             value={state.message}
-            id="outlined-multiline-static"
-            variant="outlined"
+            id="filled-secondary"
+            variant="filled"
             label="Message"
+            color="secondary"
+            className={classes.root}
+            InputProps={{
+              className: classes.input,
+            }}
           />
         </div>
         <button className="messageButton">Send Message</button>
       </form>
-      <div className="render-chat">
-        <h1>Chat Log</h1>
-        {renderChat()}
-      </div>
     </div>
   );
 }
-
-export default Message;
+Message.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+export default withStyles(styles)(Message);

@@ -9,19 +9,22 @@ const MobileNav = ({ handleClick, open }) => {
         X
       </h3>
       <Link to="/preferences" onClick={handleClick}>
-        Search for love
+        Find Matches
       </Link>
       <Link to="/favorites" onClick={handleClick}>
         Favorites
-      </Link>
-      <Link to="/about" onClick={handleClick}>
-        About Covid-18+
       </Link>
       <Link to="/login" onClick={handleClick}>
         Login
       </Link>
       <Link to="/myprofile" onClick={handleClick}>
         My Profile
+      </Link>
+      <Link to="/CovidTips" onClick={handleClick}>
+        Covid-19 Tips
+      </Link>
+      <Link to="/about" onClick={handleClick}>
+        About Covid-18+
       </Link>
     </div>
   ) : (

@@ -104,7 +104,7 @@ function Message(props) {
             label="Message"
           />
         </div>
-        <button>Send Message</button>
+        <button className="messageButton">Send Message</button>
       </form>
       <div className="render-chat">
         <h1>Chat Log</h1>

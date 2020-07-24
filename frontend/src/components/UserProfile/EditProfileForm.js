@@ -125,7 +125,7 @@ const EditProfileForm = (props) => {
         type="radio"
         value={userInfo.antibodies}
         name="antibodies"
-        value="yesAnti"
+        
         id="yes"
         onChange={handleChange}
       />
@@ -137,7 +137,7 @@ const EditProfileForm = (props) => {
         type="radio"
         value={userInfo.antibodies}
         name="antibodies"
-        value="noAnti"
+        
         id="no"
         onChange={handleChange}
       />

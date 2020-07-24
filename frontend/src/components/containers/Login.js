@@ -35,7 +35,7 @@ export default function Login() {
   return (
     <div className="Login">
       <form onSubmit={handleSubmit}>
-        <FormGroup controlId="username" bsSize="large">
+        <FormGroup controlId="username" >
           <FormLabel>Username</FormLabel>
           <FormControl
             autoFocus
@@ -45,7 +45,7 @@ export default function Login() {
             className="input-field"
           />
         </FormGroup>
-        <FormGroup controlId="password" bsSize="large">
+        <FormGroup controlId="password" >
           <FormLabel>Password</FormLabel>
           <FormControl
             value={password}
@@ -56,7 +56,7 @@ export default function Login() {
         </FormGroup>
         <Button
           block
-          bsSize="large"
+          
           disabled={!validateForm()}
           type="submit"
           className="register-btn"

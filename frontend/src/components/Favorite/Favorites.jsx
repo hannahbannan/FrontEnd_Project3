@@ -40,7 +40,7 @@ const Favorite = (props) => {
   ));
 
   return (
-    <div>
+    <div className="whole-favorites-ctn">
       <h2 className="page-title">Favorites</h2>
       <div className="all-fave-container">{favesArray}</div>
     </div>

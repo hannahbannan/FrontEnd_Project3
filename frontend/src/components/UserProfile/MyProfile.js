@@ -93,6 +93,7 @@ const MyProfile = () => {
   };
 
   if (isDeleted) {
+    history.push('/')
     console.log("deleted!");
   }
 

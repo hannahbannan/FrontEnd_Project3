@@ -3,12 +3,12 @@ import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import "./Login.css";
 import axios from "axios";
 import apiUrl from "../apiConfig";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+  const history = useHistory()
   function validateForm() {
     return username.length > 0 && password.length > 0;
   }
@@ -27,6 +27,7 @@ export default function Login() {
       document.cookie = "username=" + response.data.username;
     };
     makeAPICall();
+    history.push('/favorites')
   }
 
   return (

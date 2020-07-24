@@ -15,11 +15,9 @@ const Dashboard = ({finalData}) => {
     } catch (err) {
       console.error(err)
     }
-    console.log(randomUser.isFavorite);
     let indexToRemove = users.indexOf(randomUser);
     let splicedUsers = [...users]
     splicedUsers.splice(indexToRemove, 1);
-    console.log(splicedUsers);
     setUsers(splicedUsers);
     setRandomUser(users[Math.floor(Math.random() * users.length)])
   };
@@ -28,14 +26,14 @@ const Dashboard = ({finalData}) => {
     let indexToRemove = users.indexOf(randomUser);
     let splicedUsers = [...users]
     splicedUsers.splice(indexToRemove, 1);
-    console.log(splicedUsers);
     setUsers(splicedUsers);
     setRandomUser(users[Math.floor(Math.random() * users.length)])
   };
   
+   console.log(users)
 
   if (!randomUser) {
-    return <h2>Loading your next match....</h2>;
+    return <h2>No more profiles to see!</h2>;
   } else {
     return (
       <div className="dashboard">

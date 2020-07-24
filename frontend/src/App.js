@@ -11,9 +11,11 @@ import Preferences from "./components/Register/Preferences";
 import Messages from "./components/messages/Messages";
 import Favorites from "./components/Favorite/Favorites";
 import FavoritedUser from "./components/FavoritedUser/FavoritedUser";
-import Footer from './components/Footer/Footer';
 import CovidTips from './components/CovidTips'
 // import Animation from './components/Animation'
+import Footer from './components/Footer/Footer'
+import MyProfile from './components/UserProfile/MyProfile'
+import EditProfileForm from './components/UserProfile/EditProfileForm'
 
 function App() {
   const [finalData, setFinalData] = useState([]);
@@ -41,9 +43,8 @@ function App() {
           render={(props) => <Dashboard {...props} finalData={finalData} />}
         />
         <Route path="/about" component={About} />
-        
-        <Route path="/messages" component={Messages} />
         <Route path="/CovidTips" component={CovidTips} />
+        <Route path="/messages/:username" component={Messages} />
         <Route path="/favorites/:id" component={FavoritedUser} />
         <Route path="/favorites" component={Favorites} />
         <Route path="/login" component={Login} />
@@ -58,6 +59,8 @@ function App() {
             />
           )}
         />
+        <Route path="/myprofile/:id/edit" component={EditProfileForm} />
+        <Route path='/myprofile' component={MyProfile}/>
       </Switch>
       <Footer/>
     </div>

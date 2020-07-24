@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import apiUrl from "../apiConfig";
-import './RegisterForm.css'
+import "./RegisterForm.css";
 const RegisterForm = (props) => {
   const history = useHistory();
   const [input, setInput] = useState({
@@ -14,6 +14,8 @@ const RegisterForm = (props) => {
     hobbiesAfter: "",
     antibodies: true,
     image: "",
+    username: "",
+    password: "",
   });
   const [user, setUser] = useState(null);
   const handleChange = (e) => {
@@ -36,13 +38,14 @@ const RegisterForm = (props) => {
     })
       .then((res) => {
         console.log("inside handle submit response is - ", res);
+        document.cookie = "username=" + res.data.username;
         setUser({ newUserProfile: res.data });
       })
       .catch(console.error);
     console.log(input);
     //Route to preferences page
 
-    history.push('/preferences')
+    history.push("/preferences");
   };
 
   return (
@@ -74,7 +77,7 @@ const RegisterForm = (props) => {
           onChange={handleChange}
         />
         <br />
-        <label>What's your gender</label>
+        <label>What's your gender?</label>
         <input
           type="text"
           value={input.gender}
@@ -100,6 +103,7 @@ const RegisterForm = (props) => {
         <br />
         <label>Got COVID Antibodies?</label>
         <input
+          className="radio"
           type="radio"
           value={input.antibodies}
           name="antibodies"
@@ -107,8 +111,11 @@ const RegisterForm = (props) => {
           id="yes"
           onChange={handleChange}
         />
-        <label htmlFor="true">Yes</label>
+        <label htmlFor="true" id="radio-register">
+          Yes
+        </label>
         <input
+          classname="radio"
           type="radio"
           value={input.antibodies}
           name="antibodies"
@@ -116,7 +123,9 @@ const RegisterForm = (props) => {
           id="no"
           onChange={handleChange}
         />
-        <label htmlFor="false">No</label>
+        <label htmlFor="false" id="radio-register">
+          No
+        </label>
         <br />
         <label>Profile Image URL</label>
         <input
@@ -126,7 +135,26 @@ const RegisterForm = (props) => {
           onChange={handleChange}
         />
         <br />
-        <button className="create-profile-btn" type="submit">Create Profile</button>
+        <label>Create a username</label>
+        <input
+          type="text"
+          value={input.username}
+          name="username"
+          onChange={handleChange}
+        />
+        <br />
+        <label>Create a password</label>
+        <input
+          type="text"
+          value={input.password}
+          name="password"
+          onChange={handleChange}
+        />
+        <br />
+        <br />
+        <button className="create-profile-btn" type="submit">
+          Create Profile
+        </button>
       </form>
     </>
   );

@@ -10,11 +10,7 @@ export default function About() {
       <div className="about-info-card">
         {" "}
         <p className="about-info">
-          This is a dating application where the user can create a profile, and
-          view other user profiles to find a match. The user can then chat with
-          the users in their favorites, or the users they matched with. Provides
-          a platform for the user to connect with people who may have
-          antibodies, or the opposite.
+          This dating application provides a platform for users to connect with people during the coronavirus pandemic who may have antibodies or the opposite. Users can create profiles and view other users' profiles to find a match. The user can then chat with users they are matched with via their favorites section. 
         </p>
       </div>
 
@@ -32,7 +28,7 @@ export default function About() {
                 alt="jordan"
               ></img></div>
               <p className="jordan-desc">
-              (insert roles here)
+              Jordan is responsible for the messaging functionality, setting up routes for messaging as well as the user and messages schemas on the backend. In addition to those accomplishments he's also responsible for making the login feature functional and helped style the messages component.
             </p>
           </div>
           <div className="naama">
@@ -42,7 +38,7 @@ export default function About() {
                 alt="naama"
               ></img></div>
              <p className="naama-desc">
-              (insert roles here)
+              Naama set up the core React components including the Registration, Preferences, User Profile, Home and Footer. She oversaw the project structure and helped tie in component relationships. She also incorporated alot of the styling and design across the site.
             </p>
           </div>
           <div className="anthony">
@@ -53,7 +49,7 @@ export default function About() {
                 alt="anthony"
               ></img></div>
             <p className="anthony-desc">
-              (insert roles here)
+              Anthony helped with setting up the server, users routes, and deployment on the backend. He also helped with the messaging functionality alongside Jordan. In addition to that he is also responsible for creating the About, and Covid Tips components on the app. 
             </p>
           </div>
           <div className="hannah">
@@ -63,7 +59,7 @@ export default function About() {
                 alt="hannah"
               ></img></div>
               <p className="hannah-desc">
-              (insert roles here)
+              Hannah is responsible for setting up the initial React application as well as working on key React components such as the Dashboard, Favorites, and the Nav. In addition to that Hannah also oversaw the UX by troubleshooting the links, buttons, and other features. Hannah is also responsible for helping style components as well.
             </p>
           </div>
         </div>

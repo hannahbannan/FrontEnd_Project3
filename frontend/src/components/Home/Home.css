@@ -9,15 +9,22 @@
   border-radius: 25px;
   color: #ffffff;
   font-size: 20px;
-  min-width: 250px;
+  width: 200px;
   font-weight: 100;
+  cursor: pointer;
 }
+.register-btn:hover {
+  background-color: #362936;
+  border: 2px solid #362936;
+}
+
 .main-vector {
   display: none;
 }
 .antibody-tagline {
-  color: white;
-  font-size: 24px;
+  color: #d93f51;
+  font-size: 28px;
+  font-weight: bolder;
 }
 @media only screen and (min-width: 768px){
   .antibody-tagline {
@@ -30,7 +37,6 @@
 .main-vector {
   display: block;
   background-color: #1c101c;
-  /* border-radius: 15px; */
 }
 #vector-img {
   width: 500px;
@@ -47,10 +53,6 @@
     max-height: 100vh;
     padding: 25px;
   }
-  div span {
-    font-size: 60px;
-    font-weight: 700;
-  }
 
   .antibody-tagline {
     grid-column: 1;
@@ -58,7 +60,7 @@
     color: white;
     font-size: 36px;
     padding: 10px;
-    margin-top: 0;
+    margin-top: 0px;
   }
 
   .form-sidebar {
@@ -70,7 +72,8 @@
     border-radius: 15px;
     color: #d93f51;
     font-size: 24px;
-    min-width: 90%;
+    width: 300px;
+    height: 60px;
     font-weight: 100;
   }
   .main-vector {

@@ -1,12 +1,33 @@
 .preferences-form {
-    color: #ffffff;
-    font-size: 20px;
+  color: #ffffff;
+  font-size: 24px;
+  margin: 0 auto;
 }
-.preferences-btn {
-    background-color: #d93f51;
-    border: 2px solid transparent;
-    border-radius: 25px;
-    color: #ffffff;
-    font-size: 20px;
-    min-width: 100px;
+
+.preferences-form > input {
+  margin: 30px;
+  height: 24px;
+}
+
+.age {
+    width: 50px;
+    height: 25px;
+    margin: 15px;
+}
+
+.radio {
+  width: 20px;
+  height: 20px;
+  margin: 20px;
+}
+
+.label {
+    font-weight: bolder;
+}
+
+@media only screen and (min-width: 768px) {
+  section {
+    display: inline-block;
+    padding: 10px;
+  }
 }
